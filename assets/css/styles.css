@@ -8,7 +8,7 @@ body {
     width: 65%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     background-image: url("/assets/images/game-panel-bkg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,6 @@ body {
 
 h1, p {
     font-family: "Poppins", sans-serif;
-    font-size: 180%;
     font-weight: 600;
     color: white;
     text-align: center;
@@ -25,7 +24,11 @@ h1, p {
 }
 
 h1 {
+    font-size: 190%;
     padding: 30px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-weight: 700;
 }
 
 p {
