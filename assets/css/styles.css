@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,500;1,600&display=swap');
+
 body {
-    background-color: blueviolet;
+    background-image: url("/assets/images/background.jpeg");
 }
+
+.game-panel {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    background-color: cornflowerblue;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 180%;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
