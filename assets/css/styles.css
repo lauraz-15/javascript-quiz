@@ -61,6 +61,25 @@ p {
 
 #q-counter {
     padding-top: 30px;
+    
+}
+
+/* Start button */
+
+#start-btn {
+    background: rgba(25, 123, 235, 0.356);
+    border-radius: 15px;
+    border: 2px solid gold;
+    padding: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 130%;
+    color: #ffffff;
+    margin: 20% 42%;
+}
+
+#start-btn p {
+  
 }
 
 
