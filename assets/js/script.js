@@ -98,21 +98,50 @@ document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
 
     button.addEventListener("click", function() {
-        // runGame()
-        console.log("Game has started!")
-        console.log(questions);
+        runGame()
     })
 })
 
 // check if user has clicked START button, if so, then start the game
 
-// function showQuestion 
-// - Pick random question out of the question array and display to the user
+function runGame() {
+    console.log("Star game function is running")
+    
+// get random question 
+    //get random number
+    let randomNumber = Math.floor(Math.random() * questions.length);
+    console.log(`The random number for the q array is ${randomNumber}`)
 
-// function startGame
-// 1. gets the question and answers and displays to the user
+    // get question using the random number
+    let randomQuestion = questions[randomNumber]
+    console.log(randomQuestion);
+
+    // displays question and answers to the user
+    let objectKeys = Object.keys(randomQuestion)
+    let objectValues = Object.values(randomQuestion)
+    console.log(`The question picked is: ${objectKeys}`);
+    console.log(`The question picked is: ${objectValues[0]}`);
+    console.log(`The answer A is: ${objectValues[1]}`);
+    console.log(`The answer B is: ${objectValues[2]}`);
+    console.log(`The answer C is: ${objectValues[3]}`);
+    console.log(`The answer D is: ${objectValues[4]}`);
+    console.log(`The correct answer is: ${objectValues[5]}`);
+
+   
+    document.getElementById("question").textContent = objectValues[0];
+    document.getElementById("answer-a").textContent = objectValues[1]; 
+    document.getElementById("answer-b").textContent = objectValues[2]; 
+    document.getElementById("answer-c").textContent = objectValues[3]; 
+    document.getElementById("answer-d").textContent = objectValues[4];   
+
+
+
 // 2. update the question counter (1/30 etc)
 // 3. clear the previous score and set to 0;
+
+}
+// function showQuestion 
+// - Pick random question out of the question array and display to the user
 
 // function checkAnswer
 // -listen to the users choice
