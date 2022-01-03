@@ -112,17 +112,20 @@ document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
 
     button.addEventListener("click", function() {
-        getQuestion();
-        checkAnswer();
+       //clear previous score
+
+       // start new game
+       runGame();
     })
 })
 
-// function runGame() {
-//     // 3. clear the previous score and set to 0;
+function runGame() {
+    // 3. clear the previous score and set to 0;
     
-//     // get random question 
-//     getQuestion();
-// }
+    // get random question 
+    getQuestion();
+    checkAnswer();
+}
 
 // check if user has clicked START button, if so, then start the game
 
@@ -186,22 +189,25 @@ function checkAnswer() {
             score.innerHTML =+ 1
             // Play cash/positive sound
             console.log("User selected the correct answer!")
+            addNextButton()
         } else {
              // Add colors to answers accordingly
             // Play cash/negative sound
             console.log("user answered incorreclty!")
+            addNextButton()
         } 
         })
     } 
 
- let nextButton = document.createElement("button")
-
- let html = `<button id="next-btn">Next Question</button>`
-
- nextButton.innerHTML = html
- 
- let myDiv = document.getElementById("container")
-myDiv.appendChild(nextButton);
-
 }       
 
+function addNextButton() {
+    let nextButton = document.createElement("button")
+
+    let html = `<button id="next-btn">Next Question</button>`
+   
+    nextButton.innerHTML = html
+    
+    let myDiv = document.getElementById("container")
+    myDiv.appendChild(nextButton);
+}

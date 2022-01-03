@@ -4,6 +4,10 @@ body {
     background-image: url("/assets/images/background.jpeg");
 }
 
+#rules {
+    margin-top: 30px;
+}
+
 #game-panel {
     width: 65%;
     margin-right: auto;
@@ -73,12 +77,13 @@ p {
     background: rgba(25, 123, 235, 0.356);
     border-radius: 15px;
     border: 2px solid gold;
-    /* padding: 10px; */
+    padding: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 90%;
     color: #ffffff;
-    margin: 0 auto;
+    margin-left: 380%;
+    z-index: 1;
 }
 
 /* Start button */
@@ -90,9 +95,13 @@ p {
     padding: 30px;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: 130%;
+    font-size: 150%;
     color: #ffffff;
-    margin: 20% 42%;
+    margin: 5% 39% 12% 39%;
+}
+
+#start-btn:hover {
+    background-color: cornflowerblue;
 }
 
 #start-btn p {
