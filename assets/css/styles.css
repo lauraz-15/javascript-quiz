@@ -4,7 +4,7 @@ body {
     background-image: url("/assets/images/background.jpeg");
 }
 
-.game-panel {
+#game-panel {
     width: 65%;
     margin-right: auto;
     margin-left: auto;
@@ -57,11 +57,28 @@ p {
     background: rgba(25, 123, 235, 0.6);
 }
 
+.correct-answer {
+    background-color: green;
+    color: teal;
+}
+
 /* Question counter */
 
 #q-counter {
     padding-top: 30px;
     
+}
+
+#next-btn {
+    background: rgba(25, 123, 235, 0.356);
+    border-radius: 15px;
+    border: 2px solid gold;
+    /* padding: 10px; */
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 90%;
+    color: #ffffff;
+    margin: 0 auto;
 }
 
 /* Start button */
