@@ -112,24 +112,33 @@ document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
 
     button.addEventListener("click", function() {
-       //clear previous score
-
        // start new game
        runGame();
     })
 })
 
-function runGame() {
-    // 3. clear the previous score and set to 0;
-    
-    // get random question 
-    getQuestion();
-    checkAnswer();
-}
 
-// check if user has clicked START button, if so, then start the game
 
 function getQuestion() {
+    console.log("waitting for questions!")
+    let gameArea = document.createElement("div");
+    let html = `<div id="container">
+    <p id="score">Score: 0</p>
+    <p id="question">Question</p>
+
+    <div class="answers-container">
+        <p id="answer-a" class="answers">answer A</p>
+        <p id="answer-b" class="answers">answer B</p>
+        <p id="answer-c" class="answers">answer C</p>
+        <p id="answer-d" class="answers">answer D</p>
+    </div>
+    <p id="q-counter">Question 0/30</p>
+    </div>`
+
+    gameArea.innerHTML = html;
+  
+    let gamePanel = document.getElementById("game-panel");
+    gamePanel.appendChild(gameArea)
 
     //get random number
     let randomNumber = Math.floor(Math.random() * questions.length);
@@ -148,7 +157,7 @@ function getQuestion() {
     // console.log(`The correct answer is: ${objectValues[5]}`);
     let correctAnswer = objectValues[5];
    
-    // console.log(`The correct answer is: ${correctAnswer}`);
+    console.log(`The correct answer is: ${correctAnswer}`);
 
     document.getElementById("question").textContent = objectValues[0];
     document.getElementById("answer-a").textContent = objectValues[1]; 
@@ -156,18 +165,37 @@ function getQuestion() {
     document.getElementById("answer-c").textContent = objectValues[3]; 
     document.getElementById("answer-d").textContent = objectValues[4];   
 
-    // 2. update the question counter (1/30 etc)
+    // update the question counter (1/30 etc)
     document.getElementById("q-counter").textContent = `Question ${+ 1}/30`;
     return correctAnswer;
 }
 
-let correctAnswer = getQuestion();
-console.log(`The correct answer is: ${correctAnswer}`);
+// let correctAnswer = getQuestion();
+// console.log(`The correct answer is: ${correctAnswer}`);
 
-function displayColors() {
-    let correctAnswer =  document.getElementsById("answer-a")
-    correctAnswer.addClass = ".correct-answer"
+// function displayColors() {
+//     let correctAnswer =  document.getElementsById("answer-a")
+//     correctAnswer.addClass = ".correct-answer"
+// }
+
+
+function runGame() {
+
+    // hide the rules
+    let rules = document.getElementById("rules");
+    rules.remove();
+  
+    // hide the start button
+    let startButton = document.getElementById("start-btn");
+    startButton.remove();
+    
+    // display questions
+    getQuestion();
 }
+
+// check if user has clicked START button, if so, then start the game
+
+
 
 function checkAnswer() {
     console.log("We are checing the snwers and listenign to answers!")
