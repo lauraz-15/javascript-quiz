@@ -117,9 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 })
 
-
-
-function getQuestion() {
+function displayGameArea() {
     let gameArea = document.createElement("div");
     let html = `<div id="container">
     <p id="score">Score: 0</p>
@@ -138,6 +136,10 @@ function getQuestion() {
   
     let gamePanel = document.getElementById("game-panel");
     gamePanel.appendChild(gameArea)
+}
+
+
+function getQuestion() {
 
     //get random number
     let randomNumber = Math.floor(Math.random() * questions.length);
@@ -168,13 +170,7 @@ function getQuestion() {
     return correctAnswer;
 }
 
-// let correctAnswer = getQuestion();
-// console.log(`The correct answer is: ${correctAnswer}`);
 
-// function displayColors() {
-//     let correctAnswer =  document.getElementsById("answer-a")
-//     correctAnswer.addClass = ".correct-answer"
-// }
 
 
 function runGame() {
@@ -188,11 +184,12 @@ function runGame() {
     startButton.remove();
     
     // display questions
+    displayGameArea();
     getQuestion();
 
     // Add next question button
     addNextButton();
-    
+
     // check user's answer
     checkAnswer();
 }
@@ -202,14 +199,24 @@ function checkAnswer() {
     
      // listen to the users choice
     let answers = document.getElementsByClassName("answers");
-
+    let correctAnswer = getQuestion();
+    console.log(`Testing if I can import ${correctAnswer}`);
     for (let answer of answers) {
         answer.addEventListener("click", function(e) {
-
-          // compare users choice to the correct answer(if correct print to console
+        // compare users choice to the correct answer(if correct print to console
         let usersChoice = this.id;
         console.log(`Users choice is: ${usersChoice}`);
- 
+        if (usersChoice === correctAnswer) {
+            // Update the score
+            let score = document.getElementById("score")
+            score.innerHTML =+ 100;
+            console.log("User selected the correct answer!")
+        } else {
+             // Add colors to answers accordingly
+            console.log("user answered incorreclty!")
+         
+        } 
+            
         })
     } 
 
