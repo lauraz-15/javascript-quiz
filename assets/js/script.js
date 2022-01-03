@@ -120,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function getQuestion() {
-    console.log("waitting for questions!")
     let gameArea = document.createElement("div");
     let html = `<div id="container">
     <p id="score">Score: 0</p>
@@ -156,7 +155,6 @@ function getQuestion() {
     // console.log(`The answer D is: ${objectValues[4]}`);
     // console.log(`The correct answer is: ${objectValues[5]}`);
     let correctAnswer = objectValues[5];
-   
     console.log(`The correct answer is: ${correctAnswer}`);
 
     document.getElementById("question").textContent = objectValues[0];
@@ -191,17 +189,18 @@ function runGame() {
     
     // display questions
     getQuestion();
+
+    // Add next question button
+    addNextButton();
+    
+    // check user's answer
+    checkAnswer();
 }
-
-// check if user has clicked START button, if so, then start the game
-
 
 
 function checkAnswer() {
-    console.log("We are checing the snwers and listenign to answers!")
-   
-     // listen to the users choice
     
+     // listen to the users choice
     let answers = document.getElementsByClassName("answers");
 
     for (let answer of answers) {
@@ -210,20 +209,7 @@ function checkAnswer() {
           // compare users choice to the correct answer(if correct print to console
         let usersChoice = this.id;
         console.log(`Users choice is: ${usersChoice}`);
-        if (usersChoice === correctAnswer) {
-            // Add colors to answers accordingly
-            // Update the score
-            let score = document.getElementById("score")
-            score.innerHTML =+ 1
-            // Play cash/positive sound
-            console.log("User selected the correct answer!")
-            addNextButton()
-        } else {
-             // Add colors to answers accordingly
-            // Play cash/negative sound
-            console.log("user answered incorreclty!")
-            addNextButton()
-        } 
+ 
         })
     } 
 

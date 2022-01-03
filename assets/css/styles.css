@@ -61,6 +61,10 @@ p {
     background: rgba(25, 123, 235, 0.6);
 }
 
+.answers-container > p:hover {
+    background-color: cornflowerblue;
+}
+
 .correct-answer {
     background-color: green;
     color: teal;
@@ -84,6 +88,10 @@ p {
     color: #ffffff;
     margin-left: 380%;
     z-index: 1;
+}
+
+#next-btn:hover {
+    background-color: cornflowerblue;
 }
 
 /* Start button */
