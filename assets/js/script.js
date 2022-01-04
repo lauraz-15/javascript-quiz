@@ -1,10 +1,7 @@
 
  
 
-// function nextQuestion 
-// - listen to users action to press the NEXT Q button
-// - check the question counter, if number is less than 30 then call shoqQuestion function
-// - uodate question counter ++
+
 
 // function dipslayGameResults
 // -didpsly massive banner, and depending on the score tex explaining the level
@@ -150,7 +147,7 @@ function getQuestion() {
     // displays question and answers to the user
     let objectValues = Object.values(randomQuestion)
     // // log Object values to the Console
-    // console.log(`The question picked is: ${objectValues[0]}`);
+    console.log(`The question picked is: ${objectValues[0]}`);
     // console.log(`The answer A is: ${objectValues[1]}`);
     // console.log(`The answer B is: ${objectValues[2]}`);
     // console.log(`The answer C is: ${objectValues[3]}`);
@@ -165,8 +162,6 @@ function getQuestion() {
     document.getElementById("answer-c").textContent = objectValues[3]; 
     document.getElementById("answer-d").textContent = objectValues[4];   
 
-    // update the question counter (1/30 etc)
-    document.getElementById("q-counter").textContent = `Question ${+ 1}/30`;
     return correctAnswer;
 }
 
@@ -211,14 +206,18 @@ function checkAnswer() {
             let score = document.getElementById("score")
             score.innerHTML =+ 100;
             console.log("User selected the correct answer!")
+            nextQuestion();
         } else {
              // Add colors to answers accordingly
             console.log("user answered incorreclty!")
+            nextQuestion();
          
         } 
             
         })
     } 
+
+    
 
 }       
 
@@ -231,4 +230,20 @@ function addNextButton() {
     
     let myDiv = document.getElementById("container")
     myDiv.appendChild(nextButton);
+}
+
+function nextQuestion() {
+
+    // - listen to users action to press the NEXT Q button
+    let nextBtn = document.getElementById("next-btn")
+    nextBtn.addEventListener("click", function(e) {
+        console.log("Next button got clicked")
+        getQuestion();
+    })
+
+     // update the question counter (1/30 etc)
+     document.getElementById("q-counter").textContent = `Question ${+ 1}/30`;
+   
+ 
+
 }
