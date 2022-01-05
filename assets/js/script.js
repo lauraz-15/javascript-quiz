@@ -38,7 +38,7 @@ let questions = [
     },
     {
         question: "__________ JavaScript is also called server-side JavaScript.",
-        answerA: "A. Microsoft",
+        answerA: "Microsoft",
         answerB: "Navigator",
         answerC:  "LiveWire",
         answerD: "Native",
@@ -147,12 +147,12 @@ function getQuestion() {
     // displays question and answers to the user
     let objectValues = Object.values(randomQuestion)
     // // log Object values to the Console
-    console.log(`The question picked is: ${objectValues[0]}`);
+    // console.log(`The question selected is: ${objectValues[0]}`);
     // console.log(`The answer A is: ${objectValues[1]}`);
     // console.log(`The answer B is: ${objectValues[2]}`);
     // console.log(`The answer C is: ${objectValues[3]}`);
     // console.log(`The answer D is: ${objectValues[4]}`);
-    // console.log(`The correct answer is: ${objectValues[5]}`);
+
     let correctAnswer = objectValues[5];
     console.log(`The correct answer is: ${correctAnswer}`);
 
@@ -195,30 +195,31 @@ function checkAnswer() {
      // listen to the users choice
     let answers = document.getElementsByClassName("answers");
     let correctAnswer = getQuestion();
-    console.log(`Testing if I can import ${correctAnswer}`);
+
     for (let answer of answers) {
         answer.addEventListener("click", function(e) {
         // compare users choice to the correct answer(if correct print to console
         let usersChoice = this.id;
-        console.log(`Users choice is: ${usersChoice}`);
+        // console.log(`Users choice is: ${usersChoice}`);
         if (usersChoice === correctAnswer) {
             // Update the score
             let score = document.getElementById("score")
             score.innerHTML =+ 100;
             console.log("User selected the correct answer!")
+            // Add green class to users answer 
+
             nextQuestion();
         } else {
              // Add colors to answers accordingly
             console.log("user answered incorreclty!")
+            // Add red class to the users answer and green to the correct one
+
             nextQuestion();
          
         } 
             
         })
     } 
-
-    
-
 }       
 
 function addNextButton() {
@@ -232,16 +233,26 @@ function addNextButton() {
     myDiv.appendChild(nextButton);
 }
 
+let questionCounter = document.getElementById("q-counter")
+console.log(questionCounter.textContent)
+let increasedCount = 0
+let totalQuestions = 30
+
 function nextQuestion() {
 
     // - listen to users action to press the NEXT Q button
     let nextBtn = document.getElementById("next-btn")
     nextBtn.addEventListener("click", function(e) {
-        console.log("Next button got clicked")
         getQuestion();
     })
-
+ 
      // update the question counter (1/30 etc)
-    //  document.getElementById("q-counter").textContent = `Question ${++1}/30`;
+
+ 
+     let updatedQuestionCounter = "Question " + ++increasedCount + "/" + --totalQuestions
+
+     document.getElementById("q-counter").innerHTML = updatedQuestionCounter
+     console.log(updatedQuestionCounter)
+
    
 }
