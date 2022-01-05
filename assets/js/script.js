@@ -242,8 +242,6 @@ function nextQuestion() {
     })
 
      // update the question counter (1/30 etc)
-     document.getElementById("q-counter").textContent = `Question ${+ 1}/30`;
+    //  document.getElementById("q-counter").textContent = `Question ${++1}/30`;
    
- 
-
 }
