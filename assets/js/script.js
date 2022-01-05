@@ -82,7 +82,7 @@ let questions = [
         answerB: "_first_and_last_names",
         answerC:  "FirstAndLast",
         answerD: "None of the above",
-        correct: "answer-a"
+        correct: "answer-d"
     },
     {
         question: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
@@ -204,11 +204,13 @@ function checkAnswer() {
         if (usersChoice === correctAnswer) {
             // Update the score
             let score = document.getElementById("score")
-            score.innerHTML =+ 100;
+            let num = parseInt(score.innerHTML);
+            score.innerHTML = num += 100;
             console.log("User selected the correct answer!")
             // Add green class to users answer 
-
+            answer.classList.add("correct-answer");
             nextQuestion();
+            answer.classList.remove("correct-answer");
         } else {
              // Add colors to answers accordingly
             console.log("user answered incorreclty!")
@@ -224,8 +226,9 @@ function checkAnswer() {
 
 function addNextButton() {
     let nextButton = document.createElement("button")
+    nextButton.id = "next-btn";
 
-    let html = `<button id="next-btn">Next Question</button>`
+    let html = "Next Question"
    
     nextButton.innerHTML = html
     
@@ -237,6 +240,8 @@ let questionCounter = document.getElementById("q-counter")
 console.log(questionCounter.textContent)
 let increasedCount = 0
 let totalQuestions = 30
+
+
 
 function nextQuestion() {
 

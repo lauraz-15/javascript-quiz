@@ -65,9 +65,8 @@ p {
     background-color: cornflowerblue;
 }
 
-.correct-answer {
-    background-color: green;
-    color: teal;
+.answers-container > p.correct-answer {
+    background: rgba(50, 240, 97, 0.6);
 }
 
 /* Question counter */
@@ -86,7 +85,7 @@ p {
     font-weight: 400;
     font-size: 90%;
     color: #ffffff;
-    margin-left: 380%;
+
 }
 
 #next-btn:hover {
