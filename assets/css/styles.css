@@ -69,6 +69,10 @@ p {
     background: rgba(50, 240, 97, 0.6);
 }
 
+.answers-container > p.wrong-answer {
+    background: rgba(245, 78, 49, 0.6);
+}
+
 /* Question counter */
 
 #q-counter {

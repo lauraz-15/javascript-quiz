@@ -103,12 +103,20 @@ let questions = [
 
 ]
 
+let score = document.getElementById("score")
+score = 0
+
+
 // Load page and start the event listeners
 
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
 
     button.addEventListener("click", function() {
+    //     let questionCounter = document.getElementById("q-counter")
+    // // console.log(questionCounter.textContent)
+    // // let increasedCount = 0
+    // // let totalQuestions = 30
        // start new game
        runGame();
     })
@@ -117,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function displayGameArea() {
     let gameArea = document.createElement("div");
     let html = `<div id="container">
-    <p id="score">Score: 0</p>
+    <p>Score: <span id="score">0</span> JS Coins</p>
     <p id="question">Question</p>
 
     <div class="answers-container">
@@ -200,29 +208,34 @@ function checkAnswer() {
         answer.addEventListener("click", function(e) {
         // compare users choice to the correct answer(if correct print to console
         let usersChoice = this.id;
-        // console.log(`Users choice is: ${usersChoice}`);
+      
         if (usersChoice === correctAnswer) {
             // Update the score
             let score = document.getElementById("score")
             let num = parseInt(score.innerHTML);
             score.innerHTML = num += 100;
             console.log("User selected the correct answer!")
+
             // Add green class to users answer 
-            answer.classList.add("correct-answer");
+            answer.classList.add("correct-answer")
+            score += 100;
             nextQuestion();
-            answer.classList.remove("correct-answer");
-        } else {
+            
+        } else if (usersChoice !== correctAnswer) {
              // Add colors to answers accordingly
             console.log("user answered incorreclty!")
             // Add red class to the users answer and green to the correct one
-
+            answer.classList.add("wrong-answer")
             nextQuestion();
-         
-        } 
-            
+
+        }     
         })
+        return answer
     } 
+    
 }       
+
+
 
 function addNextButton() {
     let nextButton = document.createElement("button")
@@ -236,28 +249,27 @@ function addNextButton() {
     myDiv.appendChild(nextButton);
 }
 
-let questionCounter = document.getElementById("q-counter")
-console.log(questionCounter.textContent)
-let increasedCount = 0
-let totalQuestions = 30
 
 
 
 function nextQuestion() {
+    // remove class colors 
+      // remove the class
+    // answer.classList.remove("correct-answer");
 
     // - listen to users action to press the NEXT Q button
     let nextBtn = document.getElementById("next-btn")
     nextBtn.addEventListener("click", function(e) {
         getQuestion();
     })
- 
+
      // update the question counter (1/30 etc)
 
  
-     let updatedQuestionCounter = "Question " + ++increasedCount + "/" + --totalQuestions
+    //  let updatedQuestionCounter = "Question " + ++increasedCount + "/" + --totalQuestions
 
-     document.getElementById("q-counter").innerHTML = updatedQuestionCounter
-     console.log(updatedQuestionCounter)
+    //  document.getElementById("q-counter").innerHTML = updatedQuestionCounter
+    //  console.log(updatedQuestionCounter)
 
    
 }
