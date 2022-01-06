@@ -103,9 +103,11 @@ let questions = [
 
 ]
 
-let score = document.getElementById("score")
+let score = document.getElementById("score");
 score = 0
 
+let increasedCount = 0;
+let totalQuestions = 30;
 
 // Load page and start the event listeners
 
@@ -113,10 +115,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
 
     button.addEventListener("click", function() {
-    //     let questionCounter = document.getElementById("q-counter")
-    // // console.log(questionCounter.textContent)
-    // // let increasedCount = 0
-    // // let totalQuestions = 30
        // start new game
        runGame();
     })
@@ -265,11 +263,7 @@ function nextQuestion() {
 
      // update the question counter (1/30 etc)
 
- 
-    //  let updatedQuestionCounter = "Question " + ++increasedCount + "/" + --totalQuestions
-
-    //  document.getElementById("q-counter").innerHTML = updatedQuestionCounter
-    //  console.log(updatedQuestionCounter)
-
-   
+     let questionCounter = document.getElementById("q-counter");
+     let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
+     questionCounter.innerHTML = updateCounter   
 }
