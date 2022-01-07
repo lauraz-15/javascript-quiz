@@ -174,49 +174,50 @@ function displayGameArea() {
     console.log(`The correct answer is: ${correctAnswer}`);
 }
 
-
+/**
+ * Hine the rules and the start button
+ * And insert random question
+ * Display the game panenel and add questions
+ * Add next button and check userš answer
+ */
 
 function runGame() {
 
-    // hide the rules
     let rules = document.getElementById("rules");
     rules.remove();
   
-    // hide the start button
     let startButton = document.getElementById("start-btn");
     startButton.remove();
     
-    // display questions
     displayGameArea();
     getQuestion();
-
-    // Add next question button
     addNextButton();
-
-    // check user's answer
     checkAnswer();
 }
 
+/**
+ * Listen to user's choice and compare it with the correct answer
+ * Update the score if correct answer +100
+ * Add green background if correct answer slected
+ * Add red background if the incorrect answer selected
+ */
 
 function checkAnswer() {
     
-     // listen to the users choice
     let answers = document.getElementsByClassName("answers");
     let correctAnswer = getQuestion();
 
     for (let answer of answers) {
         answer.addEventListener("click", function(e) {
-        // compare users choice to the correct answer(if correct print to console
         let usersChoice = this.id;
       
         if (usersChoice === correctAnswer) {
             // Update the score
-            let score = document.getElementById("score")
-            let num = parseInt(score.innerHTML);
-            score.innerHTML = num += 100;
+            // let score = document.getElementById("score")
+            // let num = parseInt(score.innerHTML);
+            // score.innerHTML = num += 100;
             console.log("User selected the correct answer!")
 
-            // Add green class to users answer 
             answer.classList.add("correct-answer")
             score += 100;
             nextQuestion();
@@ -235,6 +236,9 @@ function checkAnswer() {
     
 }       
 
+/**
+ * Add next button to the game panel
+ */
 
 
 function addNextButton() {
@@ -250,20 +254,21 @@ function addNextButton() {
 }
 
 
-
+/**
+ * Listen to event wgen user clicks the button
+ * Get next question
+ * Update the question counter
+ */
 
 function nextQuestion() {
     // remove class colors 
       // remove the class
     // answer.classList.remove("correct-answer");
 
-    // - listen to users action to press the NEXT Q button
     let nextBtn = document.getElementById("next-btn")
     nextBtn.addEventListener("click", function(e) {
         getQuestion();
     })
-
-     // update the question counter (1/30 etc)
 
      let questionCounter = document.getElementById("q-counter");
      let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
