@@ -109,16 +109,6 @@ score = 0
 let increasedCount = 0;
 let totalQuestions = 30;
 
-let question = document.getElementById("question");
-question = "some question"
-let answerA = document.getElementById("answer-a");
-let answerB = document.getElementById("answer-b");
-let answerC = document.getElementById("answer-c");
-let answerD = document.getElementById("answer-d");
-let correctAnswer
-
-let objectValues = getQuestion();
-
 // Load page and start the event listeners
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -130,49 +120,57 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 })
 
-/**
- * Get random number and pick random question using the number.
- */
-
-function getQuestion() {
-
-    let randomNumber = Math.floor(Math.random() * questions.length);
-
-    let randomQuestion = questions[randomNumber]
-
-    let objectValues = Object.values(randomQuestion)
-  
-    return objectValues;
-}
-
-/**
- * Display the game panel
- * And insert random question
- */
-
 function displayGameArea() {
-
     let gameArea = document.createElement("div");
     let html = `<div id="container">
     <p>Score: <span id="score">0</span> JS Coins</p>
-    <p id="question">${objectValues[0]}</p>
+    <p id="question">Question</p>
 
     <div class="answers-container">
-        <p id="answer-a" class="answers">${objectValues[1]}</p>
-        <p id="answer-b" class="answers">${objectValues[2]}</p>
-        <p id="answer-c" class="answers">${objectValues[3]}</p>
-        <p id="answer-d" class="answers">${objectValues[4]}</p>
+        <p id="answer-a" class="answers">answer A</p>
+        <p id="answer-b" class="answers">answer B</p>
+        <p id="answer-c" class="answers">answer C</p>
+        <p id="answer-d" class="answers">answer D</p>
     </div>
     <p id="q-counter">Question 0/30</p>
     </div>`
 
     gameArea.innerHTML = html;
+  
     let gamePanel = document.getElementById("game-panel");
     gamePanel.appendChild(gameArea)
+}
+
+
+function getQuestion() {
+
+    //get random number
+    let randomNumber = Math.floor(Math.random() * questions.length);
+
+    // get question using the random number
+    let randomQuestion = questions[randomNumber]
+
+    // displays question and answers to the user
+    let objectValues = Object.values(randomQuestion)
+    // // log Object values to the Console
+    // console.log(`The question selected is: ${objectValues[0]}`);
+    // console.log(`The answer A is: ${objectValues[1]}`);
+    // console.log(`The answer B is: ${objectValues[2]}`);
+    // console.log(`The answer C is: ${objectValues[3]}`);
+    // console.log(`The answer D is: ${objectValues[4]}`);
 
     let correctAnswer = objectValues[5];
     console.log(`The correct answer is: ${correctAnswer}`);
+
+    document.getElementById("question").textContent = objectValues[0];
+    document.getElementById("answer-a").textContent = objectValues[1]; 
+    document.getElementById("answer-b").textContent = objectValues[2]; 
+    document.getElementById("answer-c").textContent = objectValues[3]; 
+    document.getElementById("answer-d").textContent = objectValues[4];   
+
+    return correctAnswer;
 }
+
 
 
 
