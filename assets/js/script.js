@@ -98,12 +98,9 @@ let score = 0
 let currentQuestion = {}
 let counter = 0
 let questionsArray = [];
-const maxQuestions = 30;
+const maxQuestions = 1
 const correctScore = 100;
-
 let correctAnswer;
-let answersElements = document.getElementsByClassName("answers")
-
 
 
 /**
@@ -150,14 +147,13 @@ function getQuestion() {
     const answerB = document.getElementById("answer-b");
     const answerC = document.getElementById("answer-c");
     const answerD = document.getElementById("answer-d");
-    const scoreArea = document.getElementById("score");
     const questionCounter = document.getElementById("q-counter");
 
-    if (counter > 30 ) {
-        localStorage.setItem('latestScore', score)
+    // if (counter > 30 ) {
+    //     localStorage.setItem('latestScore', score)
 
-        return window.location.assign('end/html');
-    }
+    //     return window.location.assign('end/html');
+    // }
 
     counter++
     questionCounter.innerHTML = `Question: ${counter}/${maxQuestions}`;
@@ -227,6 +223,7 @@ function displayGameArea(currentQuestion) {
 function checkAnswer(currentQuestion) {
     
     let answers = document.getElementsByClassName("answers");
+    const scoreArea = document.getElementById("score");
 
     console.log(`The correct answer from checkAnswer function is: ${correctAnswer}`)
 
@@ -238,14 +235,27 @@ function checkAnswer(currentQuestion) {
                 console.log("User selected the correct answer!")
                 answer.classList.add("correct-answer")
                 addNextButton(currentQuestion)
-               
-                nextQuestion();
+                score += correctScore
+                scoreArea.innerText = score;
+                console.log(`New score is ${score}`)
+                console.log(`The current counter is ${counter}`)
+                console.log(`The max question count is: ${maxQuestions}`);
+                if (counter < maxQuestions) {
+                    nextQuestion();
+                } else {
+                    console.log(`Games is over!`)
+                    endGame()
+                }
             } else if (usersChoice !== correctAnswer) {
                 console.log("user answered incorreclty!")
                 answer.classList.add("wrong-answer")
                 addNextButton(currentQuestion);
-               
-                nextQuestion();
+                if (counter < maxQuestions) {
+                    nextQuestion();
+                } else {
+                    console.log(`Games is over!`)
+                    endGame();
+                }
             }
             
         })
@@ -322,22 +332,28 @@ function nextQuestion() {
  * display "new game" button
  */
 
-function EndGame() {
-    let gameArea = displayGameArea();
-    let gamePanel = document.getElementById("game-panel");
-    gamePanel.removeChild(gameArea);
 
-    let score = document.getElementById("score")
-    score = score.textContent   
-    console.log("End game is connected")
-    console.log(`Curretnt score is: ${score}`);
+function endGame() {
+    console.log("Function is connected");
+    let gamePanel = document.getElementById("game-panel");
+    gamePanel.remove();
 
     let endGamepanel = document.createElement("div");
-
     endGamepanel.id = "end-game"
 
-    html = `<h2>Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
-       <button id="start-btn">START</button>`
+    html = `<h2 id="end-text">Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
+       <button id="start-btn">RESTART</button>`
+
     endGamepanel.innerHTML = html;
-    gamePanel.appendChild(endGamepanel);
+    console.log(endGamepanel.innerHTML);
+
+    let bodyArea = document.getElementById("body-area");
+    bodyArea.appendChild(endGamepanel);
+
+    let button = document.getElementById("start-btn")
+    button.addEventListener("click", function() {
+        // endGamepanel.remove();
+        // runGame();
+        document.location.reload();
+    });
 }

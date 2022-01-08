@@ -8,7 +8,7 @@ body {
     margin-top: 30px;
 }
 
-#game-panel {
+#game-panel, #end-game {
     width: 65%;
     margin-right: auto;
     margin-left: auto;
@@ -19,7 +19,7 @@ body {
     background-position: center;
 }
 
-h1, p {
+h1, h2, p {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: white;
@@ -75,10 +75,6 @@ p {
 
 /* Question counter */
 
-#q-counter {
-    padding-top: 30px;
-    
-}
 
 #next-btn {
     background: rgba(25, 123, 235, 0.356);
@@ -89,6 +85,8 @@ p {
     font-weight: 400;
     font-size: 90%;
     color: #ffffff;
+    padding: 10px;
+    margin-top: 10% 10% 80% 10%
 
 }
 
@@ -114,16 +112,16 @@ p {
     background-color: cornflowerblue;
 }
 
-#start-btn p {
-  
-}
+
 
 #end-game {
     background-image: url("/assets/images/game-panel-bkg.jpeg");
     justify-content: center;
 }
 
-#end-game > p {
-    padding: 20%;
+#end-text {
+    color:white;
+    text-transform: uppercase;
+    margin: 20%;
 }
 
