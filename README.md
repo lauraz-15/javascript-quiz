@@ -15,7 +15,7 @@ Each correct answer revards user with 100 Javascrip quiz coins, that are added t
 
 The target audience for the website would be any lever software developers who want to test their Javascrip knowlage. Additionally this can be used to prepare for technical interviews or tests.3
 
-![Mockup](https://github.com/lauraz-15/mindful-life/blob/main/assets/readme_images/mockup.png)
+![Mockup]()
 
 ## First Time Visitor Goals
   
@@ -38,7 +38,7 @@ The target audience for the website would be any lever software developers who w
 # Design 
 
 Inspiration for design is taken from "Do you want to be a millionaire TV quiz show. 
-the main heading also relates to it slighty as it says: "Can you be a Javascrip Master"
+The main heading also relates to it slighty as it says: "Can you be a Javascrip Master"
 
 
 
