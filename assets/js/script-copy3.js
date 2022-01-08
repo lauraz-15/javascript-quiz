@@ -1,4 +1,16 @@
 
+ 
+
+
+
+// function dipslayGameResults
+// -didpsly massive banner, and depending on the score tex explaining the level
+// add button: "Pay again" - call startGame function
+
+
+
+// answers in an array of objects;
+
 let questions = [
     {
         question: "Why does JavaScript and Java have similar name",
@@ -91,21 +103,22 @@ let questions = [
 
 ]
 
-const question = document.getElementById("question");
-const answerA = document.getElementById("answer-a");
-const answerB = document.getElementById("answer-b");
-const answerC = document.getElementById("answer-c");
-const answerD = document.getElementById("answer-d");
-const scoreArea = document.getElementById("score");
-const questionCounter = document.getElementById("q-counter");
+let score = document.getElementById("score");
+score = 0
 
-let score = 0
-let currentQuestion = {}
 let counter = 0
-let questionsArray = [];
-const maxQuestions = 30;
-const correctScore = 100;
 
+let questionsArray = [];
+let currentQuestion;
+
+let increasedCount = 0;
+let totalQuestions = 30;
+
+// let question = currentQuestion[0];
+// let answerA = currentQuestion[1];
+// let answerB = currentQuestion[2];
+// let answerC = currentQuestion[3];
+// let answerD = currentQuestion[4];
 let correctAnswer
 let answersElements = document.getElementsByClassName("answers")
 
@@ -118,46 +131,12 @@ let answersElements = document.getElementsByClassName("answers")
 
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
+    
+   
     button.addEventListener("click", function() {
        runGame();
     })
 })
-
-/**
- * Hide the rules and the start button
- * And insert random question
- * Display the game panenel and add questions
- * Add next button and check userš answer
- */
-
- function runGame() {
-
-    let rules = document.getElementById("rules");
-    rules.remove();
-  
-    let startButton = document.getElementById("start-btn");
-    startButton.remove();
-
-    score = 0;
-    counter = 0;
-    questionsArray = [...questions];
-
-    getQuestion()
-    displayGameArea(currentQuestion);
-
-}
-
-
-function getQuestion() {
-    if (counter > 30 ) {
-        localStorage.setItem('latestScore', score)
-
-        return window.location.assign('end/html');
-    }
-
-    counter++
-    questionCounter.innerText = `Question: ${counter}/${maxQuestions}`;
-}
 
 /**
  * Get random number and pick random question using the number.
@@ -217,7 +196,25 @@ function displayGameArea(currentQuestion) {
     return gameArea
 }
 
+/**
+ * Hide the rules and the start button
+ * And insert random question
+ * Display the game panenel and add questions
+ * Add next button and check userš answer
+ */
 
+function runGame() {
+
+    let rules = document.getElementById("rules");
+    rules.remove();
+  
+    let startButton = document.getElementById("start-btn");
+    startButton.remove();
+
+    getQuestion()
+    displayGameArea(currentQuestion);
+
+}
 
 /**
  * Listen to user's choice and compare it with the correct answer
