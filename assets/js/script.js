@@ -109,24 +109,29 @@ score = 0
 let increasedCount = 0;
 let totalQuestions = 30;
 
+let test = document.querySelector("#test")
 let question = document.getElementById("question");
-question = "some question"
 let answerA = document.getElementById("answer-a");
 let answerB = document.getElementById("answer-b");
 let answerC = document.getElementById("answer-c");
 let answerD = document.getElementById("answer-d");
 let correctAnswer
+let answersElements = document.getElementsByClassName("answers")
 
 let objectValues = getQuestion();
 
-// Load page and start the event listeners
+/**
+ * Load page and start the event listeners for the start button
+ * If pressed, then call runGame function
+ */
 
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById("start-btn")
-
+    
+   
     button.addEventListener("click", function() {
-       // start new game
        runGame();
+       
     })
 })
 
@@ -172,10 +177,12 @@ function displayGameArea() {
 
     let correctAnswer = objectValues[5];
     console.log(`The correct answer is: ${correctAnswer}`);
+
+    return gameArea
 }
 
 /**
- * Hine the rules and the start button
+ * Hide the rules and the start button
  * And insert random question
  * Display the game panenel and add questions
  * Add next button and check userš answer
@@ -188,7 +195,8 @@ function runGame() {
   
     let startButton = document.getElementById("start-btn");
     startButton.remove();
-    
+
+
     displayGameArea();
     getQuestion();
     addNextButton();
@@ -205,36 +213,55 @@ function runGame() {
 function checkAnswer() {
     
     let answers = document.getElementsByClassName("answers");
-    let correctAnswer = getQuestion();
+    let correctAnswer = objectValues[5];
 
     for (let answer of answers) {
         answer.addEventListener("click", function(e) {
         let usersChoice = this.id;
       
         if (usersChoice === correctAnswer) {
-            // Update the score
-            // let score = document.getElementById("score")
-            // let num = parseInt(score.innerHTML);
-            // score.innerHTML = num += 100;
+            let score = document.getElementById("score")
+            let num = parseInt(score.innerHTML);
+            score.innerHTML = num += 100
+           
             console.log("User selected the correct answer!")
-
             answer.classList.add("correct-answer")
-            score += 100;
+
+            // for (let answer of answers) {
+            //     answer.removeEventListener("click")
+            // }
+
             nextQuestion();
+
+
+    console.log(increasedCount)
+
+    if (parseInt(increasedCount) === 30) {
+        EndGame()
+    }
             
         } else if (usersChoice !== correctAnswer) {
-             // Add colors to answers accordingly
             console.log("user answered incorreclty!")
-            // Add red class to the users answer and green to the correct one
             answer.classList.add("wrong-answer")
             nextQuestion();
 
+
+         console.log(increasedCount)
+
+           if (parseInt(increasedCount) === 30) {
+              EndGame()
+              }
+
         }     
         })
-        return answer
+
+      
+
     } 
-    
+
+   
 }       
+
 
 /**
  * Add next button to the game panel
@@ -254,6 +281,24 @@ function addNextButton() {
 }
 
 
+function resetQuestionArea() {
+    // let nextBtn = document.getElementById("next-btn")
+    // nextBtn.remove();
+
+    let gameArea = displayGameArea();
+    let gamePanel = document.getElementById("game-panel");
+    gamePanel.removeChild(gameArea)
+
+    // console.log(container.firstChild)
+    //     while (container.firstChild) {
+    //         // container.removeChild(container.firstChild);
+    //         console.log(container.firstChild)
+    //     }
+
+
+}
+
+
 /**
  * Listen to event wgen user clicks the button
  * Get next question
@@ -261,16 +306,44 @@ function addNextButton() {
  */
 
 function nextQuestion() {
-    // remove class colors 
-      // remove the class
-    // answer.classList.remove("correct-answer");
-
+    
     let nextBtn = document.getElementById("next-btn")
-    nextBtn.addEventListener("click", function(e) {
+    nextBtn.addEventListener("click", function(e) {;
+        resetQuestionArea();
         getQuestion();
-    })
 
-     let questionCounter = document.getElementById("q-counter");
-     let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
-     questionCounter.innerHTML = updateCounter   
+        let questionCounter = document.getElementById("q-counter");
+    let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
+    questionCounter.innerHTML = updateCounter   
+        
+    })  
+
+
+  
+}
+
+/**
+ * Cehck users score
+ * Display banner, preneting message according to the score
+ * display "new game" button
+ */
+
+function EndGame() {
+    let gameArea = displayGameArea();
+    let gamePanel = document.getElementById("game-panel");
+    gamePanel.removeChild(gameArea);
+
+    let score = document.getElementById("score")
+    score = score.textContent
+    console.log("End game is connected")
+    console.log(`Curretnt score is: ${score}`);
+
+    let endGamepanel = document.createElement("div");
+
+    endGamepanel.id = "end-game"
+
+    html = `<h2>Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
+       <button id="start-btn">START</button>`
+    endGamepanel.innerHTML = html;
+    gamePanel.appendChild(endGamepanel);
 }

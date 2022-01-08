@@ -251,9 +251,6 @@ function addNextButton() {
 
 
 function nextQuestion() {
-    // remove class colors 
-      // remove the class
-    // answer.classList.remove("correct-answer");
 
     // - listen to users action to press the NEXT Q button
     let nextBtn = document.getElementById("next-btn")
