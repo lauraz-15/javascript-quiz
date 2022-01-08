@@ -167,6 +167,7 @@ function getQuestion() {
     answerC.innerText = currentQuestion.answerC;
     answerD.innerText = currentQuestion.answerD;
 
+    questionsArray.splice(randomNumber, 1);
 
 }
 
