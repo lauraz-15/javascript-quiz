@@ -157,6 +157,17 @@ function getQuestion() {
 
     counter++
     questionCounter.innerText = `Question: ${counter}/${maxQuestions}`;
+
+    let randomNumber = Math.floor(Math.random() * questionsArray.length);
+    let currentQuestion = questions[randomNumber]
+    question.innerText = currentQuestion.question;
+    
+    answerA.innerText = currentQuestion.answerA;
+    answerB.innerText = currentQuestion.answerB;
+    answerC.innerText = currentQuestion.answerC;
+    answerD.innerText = currentQuestion.answerD;
+
+
 }
 
 /**
@@ -178,6 +189,8 @@ function getQuestion(questionsArray) {
     let randomQuestion = questionsArray[counter];
     let objectValues = Object.values(randomQuestion)
     currentQuestion = objectValues;
+
+
 }
 
 
