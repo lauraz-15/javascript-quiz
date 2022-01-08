@@ -91,13 +91,8 @@ let questions = [
 
 ]
 
-const question = document.getElementById("question");
-const answerA = document.getElementById("answer-a");
-const answerB = document.getElementById("answer-b");
-const answerC = document.getElementById("answer-c");
-const answerD = document.getElementById("answer-d");
-const scoreArea = document.getElementById("score");
-const questionCounter = document.getElementById("q-counter");
+
+
 
 let score = 0
 let currentQuestion = {}
@@ -106,7 +101,7 @@ let questionsArray = [];
 const maxQuestions = 30;
 const correctScore = 100;
 
-let correctAnswer
+let correctAnswer;
 let answersElements = document.getElementsByClassName("answers")
 
 
@@ -142,13 +137,22 @@ document.addEventListener("DOMContentLoaded", function() {
     counter = 0;
     questionsArray = [...questions];
 
-    getQuestion()
     displayGameArea(currentQuestion);
-
+    getQuestion();
+    checkAnswer(currentQuestion);
 }
 
 
 function getQuestion() {
+
+    const question = document.getElementById("question");
+    const answerA = document.getElementById("answer-a");
+    const answerB = document.getElementById("answer-b");
+    const answerC = document.getElementById("answer-c");
+    const answerD = document.getElementById("answer-d");
+    const scoreArea = document.getElementById("score");
+    const questionCounter = document.getElementById("q-counter");
+
     if (counter > 30 ) {
         localStorage.setItem('latestScore', score)
 
@@ -156,79 +160,59 @@ function getQuestion() {
     }
 
     counter++
-    questionCounter.innerText = `Question: ${counter}/${maxQuestions}`;
+    questionCounter.innerHTML = `Question: ${counter}/${maxQuestions}`;
 
     let randomNumber = Math.floor(Math.random() * questionsArray.length);
-    let currentQuestion = questions[randomNumber]
-    question.innerText = currentQuestion.question;
+    let currentQuestion = questions[randomNumber];
     
+    question.textContent = currentQuestion.question;
+    question.innerText = currentQuestion.question;
     answerA.innerText = currentQuestion.answerA;
     answerB.innerText = currentQuestion.answerB;
     answerC.innerText = currentQuestion.answerC;
     answerD.innerText = currentQuestion.answerD;
 
+    correctAnswer = currentQuestion["correct"];
+    console.log(`The correct answer from getQuestion 
+    function is: ${correctAnswer}`);
+
     questionsArray.splice(randomNumber, 1);
 
-}
-
-/**
- * Get random number and pick random question using the number.
- */
-
-function getQuestionArray() {
-
-    for ( let i = 1; i <= 30; i ++) {
-        let randomNumber = Math.floor(Math.random() * questions.length);
-        let randomQuestion = questions[randomNumber]
-        questionsArray.push(randomQuestion);
-    }
-    return questionsArray;
-}
-
-function getQuestion(questionsArray) {
-
-    let randomQuestion = questionsArray[counter];
-    let objectValues = Object.values(randomQuestion)
-    currentQuestion = objectValues;
-
+    displayScoreandCounter();
 
 }
 
+function displayScoreandCounter(currentQuestion) {
+    let basicDisplay = document.createElement("div");
+    basicDisplay.id = "basic"
 
-/**
- * Display the game panel
- * And insert random question
- */
+    html = ` <p>Score: <span id="score">0</p>
+    <p id="q-counter">Question: 0/30</p>`
+   
+    let gamePanel = document.getElementById("game-panel"); 
+    gamePanel.appendChild(basicDisplay);
+
+}
 
 function displayGameArea(currentQuestion) {
 
-    currentQuestion = getQuestion();
-
     let gameArea = document.createElement("div");
-
     let html = `<div id="container">
     <p>Score: <span id="score">0</span> JS Coins</p>
-    <div id="q-area">
-    <p id="question">${currentQuestion["question"]}</p>
-
-    <div class="answers-container">
-    <p id="answer-a" class="answers">${currentQuestion["answerA"]}</p>
-   <p id="answer-b" class="answers">${currentQuestion["answerB"]}</p>
-   <p id="answer-c" class="answers">${currentQuestion["answerC"]}</p>
-    <p id="answer-d" class="answers">${currentQuestion["answerD"]}</p>
-    </div>
-    </div>
     <p id="q-counter">Question 0/30</p>
-    </div>`
-
+    <div id="q-area">
+    <p id="question">Some question</p>
+    <div class="answers-container">
+    <p id="answer-a" class="answers">Answer A</p>
+    <p id="answer-b" class="answers">Answer B</p>
+    <p id="answer-c" class="answers">Answer C</p>
+    <p id="answer-d" class="answers">Answer D</p>
+    </div>
+    </div>
+   `
     gameArea.innerHTML = html; 
     let gamePanel = document.getElementById("game-panel"); 
     gamePanel.appendChild(gameArea)
-
-    let correctAnswer = currentQuestion["correct"];
-    console.log(`The correct answer is: ${correctAnswer}`);
-
-    return gameArea
 }
 
 
@@ -240,39 +224,33 @@ function displayGameArea(currentQuestion) {
  * Add red background if the incorrect answer selected
  */
 
-function checkAnswer() {
+function checkAnswer(currentQuestion) {
     
     let answers = document.getElementsByClassName("answers");
-    let correctAnswer = objectValues[5];
+
+    console.log(`The correct answer from checkAnswer function is: ${correctAnswer}`)
 
     for (let answer of answers) {
         answer.addEventListener("click", function(e) {
-        let usersChoice = this.id;
-      
-        if (usersChoice === correctAnswer) {
-            let score = document.getElementById("score")
-            let num = parseInt(score.innerHTML);
-            score.innerHTML = num += 100
-           
-            console.log("User selected the correct answer!")
-            answer.classList.add("correct-answer")
-
-            // for (let answer of answers) {
-            //     answer.removeEventListener("click")
-            // }
-
-            nextQuestion();
-            counter += 1;
-            console.log(`The new counter is: ${counter}`);
+            let usersChoice = this.id;
+            console.log(`User selected answer: ${usersChoice}`)
+            if (usersChoice === correctAnswer) {
+                console.log("User selected the correct answer!")
+                answer.classList.add("correct-answer")
+                addNextButton(currentQuestion)
                
-        } else if (usersChoice !== correctAnswer) {
-            console.log("user answered incorreclty!")
-            answer.classList.add("wrong-answer")
-            nextQuestion();
-    
-        }     
+                nextQuestion();
+            } else if (usersChoice !== correctAnswer) {
+                console.log("user answered incorreclty!")
+                answer.classList.add("wrong-answer")
+                addNextButton(currentQuestion);
+               
+                nextQuestion();
+            }
+            
         })
-    }   
+    }
+
 }       
 
 
@@ -293,6 +271,10 @@ function addNextButton() {
     myDiv.appendChild(nextButton);
 }
 
+function resetQuestionArea() {
+    let questionArea = document.getElementById("q-area");
+    questionArea.remove()  
+}
 
 /**
  * Listen to event wgen user clicks the button
@@ -304,13 +286,32 @@ function nextQuestion() {
     
     let nextBtn = document.getElementById("next-btn")
     nextBtn.addEventListener("click", function(e) {;
+        let nextButton = document.getElementById("next-btn");
+        nextButton.remove();  
+
+        let questionArea = document.getElementById("q-area");
+        questionArea.remove();
+
+        let gameArea = document.createElement("div");
+        gameArea.id = "q-area"
+        let html = `
+        <p id="question">Some question</p>
+        <div class="answers-container">
+        <p id="answer-a" class="answers">Answer A</p>
+        <p id="answer-b" class="answers">Answer B</p>
+        <p id="answer-c" class="answers">Answer C</p>
+        <p id="answer-d" class="answers">Answer D</p>
+       `
+        gameArea.innerHTML = html; 
+        let gamePanel = document.getElementById("game-panel"); 
+        gamePanel.appendChild(gameArea)
 
         getQuestion();
-        displayGameArea(currentQuestion);
+        checkAnswer(currentQuestion);
 
-    let questionCounter = document.getElementById("q-counter");
-    let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
-    questionCounter.innerHTML = updateCounter   
+    // let questionCounter = document.getElementById("q-counter");
+    // let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
+    // questionCounter.innerHTML = updateCounter   
         
     })  
 }
