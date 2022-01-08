@@ -135,8 +135,6 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener("click", function() {
        runGame();
        getQuestionArray();
-       console.log(questionsArray);
-    
     })
 })
 
@@ -153,17 +151,16 @@ function getQuestionArray() {
     }
 }
 
+
 function getQuestion() {
 
+    getQuestionArray();
     let randomQuestion = questionsArray[counter];
-    
 
     // let randomNumber = Math.floor(Math.random() * questions.length);
     // let randomQuestion = questions[randomNumber]
 
     let objectValues = Object.values(randomQuestion)
-    let answerTest = objectValues[0];
-    console.log(answerTest);
    
     return objectValues;
 }
@@ -216,7 +213,7 @@ function runGame() {
     let startButton = document.getElementById("start-btn");
     startButton.remove();
 
-
+    getQuestionArray()
     displayGameArea();
     getQuestion();
     addNextButton();
@@ -318,6 +315,7 @@ function nextQuestion() {
     nextBtn.addEventListener("click", function(e) {;
         resetQuestionArea();
         getQuestion();
+        displayGameArea();
 
     let questionCounter = document.getElementById("q-counter");
     let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
