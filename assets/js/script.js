@@ -13,7 +13,7 @@
 
 let questions = [
     {
-        question: "Why so JavaScript and Java have similar name",
+        question: "Why does JavaScript and Java have similar name",
         answerA: "JavaScript is a stripped-down version of Java",
         anwswerB: "JavaScript's syntax is loosely based on Java's",
         answerC:  "They both originated on the island of Java",
@@ -106,10 +106,13 @@ let questions = [
 let score = document.getElementById("score");
 score = 0
 
+let counter = 0
+
+let questionsArray = [];
+
 let increasedCount = 0;
 let totalQuestions = 30;
 
-let test = document.querySelector("#test")
 let question = document.getElementById("question");
 let answerA = document.getElementById("answer-a");
 let answerB = document.getElementById("answer-b");
@@ -131,7 +134,9 @@ document.addEventListener("DOMContentLoaded", function() {
    
     button.addEventListener("click", function() {
        runGame();
-       
+       getQuestionArray();
+       console.log(questionsArray);
+    
     })
 })
 
@@ -139,14 +144,27 @@ document.addEventListener("DOMContentLoaded", function() {
  * Get random number and pick random question using the number.
  */
 
+function getQuestionArray() {
+
+    for ( let i = 1; i <= 30; i ++) {
+        let randomNumber = Math.floor(Math.random() * questions.length);
+        let randomQuestion = questions[randomNumber]
+        questionsArray.push(randomQuestion);
+    }
+}
+
 function getQuestion() {
 
-    let randomNumber = Math.floor(Math.random() * questions.length);
+    let randomQuestion = questionsArray[counter];
+    
 
-    let randomQuestion = questions[randomNumber]
+    // let randomNumber = Math.floor(Math.random() * questions.length);
+    // let randomQuestion = questions[randomNumber]
 
     let objectValues = Object.values(randomQuestion)
-  
+    let answerTest = objectValues[0];
+    console.log(answerTest);
+   
     return objectValues;
 }
 
@@ -160,6 +178,7 @@ function displayGameArea() {
     let gameArea = document.createElement("div");
     let html = `<div id="container">
     <p>Score: <span id="score">0</span> JS Coins</p>
+    <div id="q-area">
     <p id="question">${objectValues[0]}</p>
 
     <div class="answers-container">
@@ -167,6 +186,7 @@ function displayGameArea() {
         <p id="answer-b" class="answers">${objectValues[2]}</p>
         <p id="answer-c" class="answers">${objectValues[3]}</p>
         <p id="answer-d" class="answers">${objectValues[4]}</p>
+    </div>
     </div>
     <p id="q-counter">Question 0/30</p>
     </div>`
@@ -232,34 +252,17 @@ function checkAnswer() {
             // }
 
             nextQuestion();
-
-
-    console.log(increasedCount)
-
-    if (parseInt(increasedCount) === 30) {
-        EndGame()
-    }
-            
+            counter += 1;
+            console.log(`The new counter is: ${counter}`);
+               
         } else if (usersChoice !== correctAnswer) {
             console.log("user answered incorreclty!")
             answer.classList.add("wrong-answer")
             nextQuestion();
-
-
-         console.log(increasedCount)
-
-           if (parseInt(increasedCount) === 30) {
-              EndGame()
-              }
-
+    
         }     
         })
-
-      
-
-    } 
-
-   
+    }   
 }       
 
 
@@ -285,17 +288,21 @@ function resetQuestionArea() {
     // let nextBtn = document.getElementById("next-btn")
     // nextBtn.remove();
 
-    let gameArea = displayGameArea();
-    let gamePanel = document.getElementById("game-panel");
-    gamePanel.removeChild(gameArea)
+    // let gameArea = displayGameArea();
+    // gameArea.textContent = '';
+   
+    // let container = document.getElementsById("container");
 
     // console.log(container.firstChild)
     //     while (container.firstChild) {
-    //         // container.removeChild(container.firstChild);
+    //         container.removeChild(container.firstChild);
     //         console.log(container.firstChild)
     //     }
 
-
+    let questionArea = document.getElementById("container");
+questionArea.remove()
+    let newQustion = getQuestion()
+    console.log(newQustion);
 }
 
 
@@ -312,14 +319,11 @@ function nextQuestion() {
         resetQuestionArea();
         getQuestion();
 
-        let questionCounter = document.getElementById("q-counter");
+    let questionCounter = document.getElementById("q-counter");
     let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
     questionCounter.innerHTML = updateCounter   
         
     })  
-
-
-  
 }
 
 /**
@@ -334,7 +338,7 @@ function EndGame() {
     gamePanel.removeChild(gameArea);
 
     let score = document.getElementById("score")
-    score = score.textContent
+    score = score.textContent   
     console.log("End game is connected")
     console.log(`Curretnt score is: ${score}`);
 
