@@ -98,7 +98,7 @@ let score = 0
 let currentQuestion = {}
 let counter = 0
 let questionsArray = [];
-const maxQuestions = 1
+const maxQuestions = 5
 const correctScore = 100;
 let correctAnswer;
 
@@ -342,7 +342,7 @@ function endGame() {
     endGamepanel.id = "end-game"
 
     html = `<h2 id="end-text">Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
-       <button id="start-btn">RESTART</button>`
+       <button id="start-btn" class="restart">RESTART</button>`
 
     endGamepanel.innerHTML = html;
     console.log(endGamepanel.innerHTML);
@@ -352,8 +352,6 @@ function endGame() {
 
     let button = document.getElementById("start-btn")
     button.addEventListener("click", function() {
-        // endGamepanel.remove();
-        // runGame();
         document.location.reload();
     });
 }

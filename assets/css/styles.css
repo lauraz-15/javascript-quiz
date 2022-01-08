@@ -8,6 +8,12 @@ body {
     margin-top: 30px;
 }
 
+/* #contast-box {
+    background:url(/assets/images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
+    background-size:cover;
+    background-blend-mode: multiply;
+} */
+
 #game-panel, #end-game {
     width: 65%;
     margin-right: auto;
@@ -15,8 +21,11 @@ body {
     margin-top: 5%;
     background-image: url("/assets/images/game-panel-bkg.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
     background-position: center;
+    background:url(/assets/images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
+    background-size:cover;
+    background-blend-mode: multiply;
 }
 
 h1, h2, p {
@@ -123,5 +132,9 @@ p {
     color:white;
     text-transform: uppercase;
     margin: 20%;
+}
+
+.restart {
+   padding: 10px;
 }
 
