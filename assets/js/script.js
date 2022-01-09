@@ -221,30 +221,24 @@ function checkAnswer(currentQuestion) {
                 answer.classList.add("correct-answer");
                 let nextBtn = document.getElementById("next-btn");
                 if (nextBtn) {
-                    score += correctScore;
-                    scoreArea.innerText = score;
                 } else {
                     score += correctScore;
                     scoreArea.innerText = score;
                     addNextButton(currentQuestion);
                 }
-                
-                
                 if (counter < maxQuestions) {
-                  nextQuestion();
-                    
+                  nextQuestion();   
                 } else {
                     endGame();
                 }
-            } else if (usersChoice !== correctAnswer) {
-                answer.classList.add("wrong-answer");
-                document.querySelectorAll("answers").disabled = true;
+                } else if (usersChoice !== correctAnswer) {
+                    answer.classList.add("wrong-answer");
                 let nextBtn = document.getElementById("next-btn");
                 if (nextBtn) { 
+                   
                 } else {
                     addNextButton(currentQuestion);
-                }
-            
+                }  
                 if (counter < maxQuestions) {
                     nextQuestion();
                 } else {
