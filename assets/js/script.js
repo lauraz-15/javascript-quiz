@@ -171,7 +171,7 @@ function getQuestion() {
 
     questionsArray.splice(randomNumber, 1);
 
-    displayScoreandCounter();
+    // displayScoreandCounter();
 
 }
 

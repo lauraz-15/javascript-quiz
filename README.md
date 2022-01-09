@@ -59,19 +59,19 @@ Feedback
 
 The site passes W3C Validator testing on [W3C Validator](https://validator.w3.org/)
 
-![HTML validator]()
+![HTML validator](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/html_validator.png)
 
 ## CSS
 
 The site passes all tests on [CSSjigsaw validator](https://jigsaw.w3.org/)
 
-![CSS validator]()
+![CSS validator](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/css_validator.png)
 
 ## Accessability
 
 Accessability was tested using Lighthouse on Google Developer Tools, passmark 100% achieved on all pages.
 
-![Accessability]()
+![Accessability](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/accessability_validator.png)
 
 ### Deployment
 
