@@ -88,17 +88,14 @@ let questions = [
         answerD: "None of the above",
         correct: "answer-a"
     }
-
-]
-
+];
 
 
-
-let score = 0
-let currentQuestion = {}
-let counter = 0
+let score = 0;
+let currentQuestion = {};
+let counter = 0;
 let questionsArray = [];
-const maxQuestions = 5
+const maxQuestions = 5;
 const correctScore = 100;
 let correctAnswer;
 
@@ -109,17 +106,17 @@ let correctAnswer;
  */
 
 document.addEventListener("DOMContentLoaded", function() {
-    let button = document.getElementById("start-btn")
+    let button = document.getElementById("start-btn");
     button.addEventListener("click", function() {
        runGame();
-    })
-})
+    });
+});
 
 /**
  * Hide the rules and the start button
  * And insert random question
  * Display the game panenel and add questions
- * Add next button and check userš answer
+ * Check user's choice
  */
 
  function runGame() {
@@ -139,6 +136,12 @@ document.addEventListener("DOMContentLoaded", function() {
     checkAnswer(currentQuestion);
 }
 
+/**
+ * Get random question 
+ * Assign it to currentQuestions array
+ * Insert random question values into html elements
+ * Update question counter
+ */
 
 function getQuestion() {
 
@@ -149,13 +152,7 @@ function getQuestion() {
     const answerD = document.getElementById("answer-d");
     const questionCounter = document.getElementById("q-counter");
 
-    // if (counter > 30 ) {
-    //     localStorage.setItem('latestScore', score)
-
-    //     return window.location.assign('end/html');
-    // }
-
-    counter++
+    counter++;
     questionCounter.innerHTML = `Question: ${counter}/${maxQuestions}`;
 
     let randomNumber = Math.floor(Math.random() * questionsArray.length);
@@ -168,7 +165,7 @@ function getQuestion() {
     answerC.innerText = currentQuestion.answerC;
     answerD.innerText = currentQuestion.answerD;
 
-    correctAnswer = currentQuestion["correct"];
+    correctAnswer = currentQuestion['correct'];
     console.log(`The correct answer from getQuestion 
     function is: ${correctAnswer}`);
 
@@ -178,17 +175,10 @@ function getQuestion() {
 
 }
 
-function displayScoreandCounter(currentQuestion) {
-    let basicDisplay = document.createElement("div");
-    basicDisplay.id = "basic"
-
-    html = ` <p>Score: <span id="score">0</p>
-    <p id="q-counter">Question: 0/30</p>`
-   
-    let gamePanel = document.getElementById("game-panel"); 
-    gamePanel.appendChild(basicDisplay);
-
-}
+/**
+ * Display game-area 
+ * game area consists of score counter, question area, questions and answers
+ */
 
 function displayGameArea(currentQuestion) {
 
@@ -204,20 +194,17 @@ function displayGameArea(currentQuestion) {
     <p id="answer-c" class="answers">Answer C</p>
     <p id="answer-d" class="answers">Answer D</p>
     </div>
-    </div>
-   `
+    </div>`;
+
     gameArea.innerHTML = html; 
     let gamePanel = document.getElementById("game-panel"); 
-    gamePanel.appendChild(gameArea)
+    gamePanel.appendChild(gameArea);
 }
 
-
-
 /**
- * Listen to user's choice and compare it with the correct answer
- * Update the score if correct answer +100
- * Add green background if correct answer slected
- * Add red background if the incorrect answer selected
+ * Check users choice and compare it with the correct answer
+ * Update the score if the correct answer selected
+ * Add relevant class to the answer(green for correct, red for incorrect)
  */
 
 function checkAnswer(currentQuestion) {
@@ -225,40 +212,32 @@ function checkAnswer(currentQuestion) {
     let answers = document.getElementsByClassName("answers");
     const scoreArea = document.getElementById("score");
 
-    console.log(`The correct answer from checkAnswer function is: ${correctAnswer}`)
-
     for (let answer of answers) {
         answer.addEventListener("click", function(e) {
             let usersChoice = this.id;
-            console.log(`User selected answer: ${usersChoice}`)
+
             if (usersChoice === correctAnswer) {
-                console.log("User selected the correct answer!")
-                answer.classList.add("correct-answer")
-                addNextButton(currentQuestion)
-                score += correctScore
+
+                answer.classList.add("correct-answer");
+                addNextButton(currentQuestion);
+                score += correctScore;
                 scoreArea.innerText = score;
-                console.log(`New score is ${score}`)
-                console.log(`The current counter is ${counter}`)
-                console.log(`The max question count is: ${maxQuestions}`);
+    
                 if (counter < maxQuestions) {
                     nextQuestion();
                 } else {
-                    console.log(`Games is over!`)
-                    endGame()
+                    endGame();
                 }
             } else if (usersChoice !== correctAnswer) {
-                console.log("user answered incorreclty!")
-                answer.classList.add("wrong-answer")
                 addNextButton(currentQuestion);
                 if (counter < maxQuestions) {
                     nextQuestion();
                 } else {
-                    console.log(`Games is over!`)
                     endGame();
                 }
             }
             
-        })
+        });
     }
 
 }       
@@ -270,20 +249,25 @@ function checkAnswer(currentQuestion) {
 
 
 function addNextButton() {
-    let nextButton = document.createElement("button")
+    let nextButton = document.createElement("button");
     nextButton.id = "next-btn";
 
-    let html = "Next Question"
+    let html = "Next Question";
    
-    nextButton.innerHTML = html
+    nextButton.innerHTML = html;
     
-    let myDiv = document.getElementById("container")
+    let myDiv = document.getElementById("container");
     myDiv.appendChild(nextButton);
 }
 
+/**
+ * Remove question element from html
+ * remove answer elements
+ */
+
 function resetQuestionArea() {
     let questionArea = document.getElementById("q-area");
-    questionArea.remove()  
+    questionArea.remove();
 }
 
 /**
@@ -294,8 +278,8 @@ function resetQuestionArea() {
 
 function nextQuestion() {
     
-    let nextBtn = document.getElementById("next-btn")
-    nextBtn.addEventListener("click", function(e) {;
+    let nextBtn = document.getElementById("next-btn");
+    nextBtn.addEventListener("click", function(e) {
         let nextButton = document.getElementById("next-btn");
         nextButton.remove();  
 
@@ -303,38 +287,33 @@ function nextQuestion() {
         questionArea.remove();
 
         let gameArea = document.createElement("div");
-        gameArea.id = "q-area"
+        gameArea.id = "q-area";
         let html = `
         <p id="question">Some question</p>
         <div class="answers-container">
         <p id="answer-a" class="answers">Answer A</p>
         <p id="answer-b" class="answers">Answer B</p>
         <p id="answer-c" class="answers">Answer C</p>
-        <p id="answer-d" class="answers">Answer D</p>
-       `
+        <p id="answer-d" class="answers">Answer D</p>`;
+
         gameArea.innerHTML = html; 
         let gamePanel = document.getElementById("game-panel"); 
-        gamePanel.appendChild(gameArea)
+        gamePanel.appendChild(gameArea);
 
         getQuestion();
-        checkAnswer(currentQuestion);
-
-    // let questionCounter = document.getElementById("q-counter");
-    // let updateCounter = "Question " + ++increasedCount + "/" + --totalQuestions
-    // questionCounter.innerHTML = updateCounter   
-        
-    })  
+        checkAnswer(currentQuestion);  
+    });
 }
 
 /**
- * Cehck users score
- * Display banner, preneting message according to the score
- * display "new game" button
+ * Remove game-panel
+ * Display banner, presenting a message and total score
+ * display "RESTART" button
  */
 
 
 function endGame() {
-    console.log("Function is connected");
+
     let gamePanel = document.getElementById("game-panel");
     gamePanel.remove();
 
@@ -350,7 +329,7 @@ function endGame() {
     let bodyArea = document.getElementById("body-area");
     bodyArea.appendChild(endGamepanel);
 
-    let button = document.getElementById("start-btn")
+    let button = document.getElementById("start-btn");
     button.addEventListener("click", function() {
         document.location.reload();
     });

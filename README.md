@@ -1,7 +1,7 @@
 
 # Javascript Quiz
 
-![Logo]()
+![Logo](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/logo.png)
 
 Link: [Javascript Quiz](https://lauraz-15.github.io/javascript-quiz/)
 
@@ -48,6 +48,31 @@ Images to support the correct/incorrect answers
 User can create a username
 Feedback
 
+# Testing
+
+
+
+
+### Validator Testing
+
+## HTML
+
+The site passes W3C Validator testing on [W3C Validator](https://validator.w3.org/)
+
+![HTML validator]()
+
+## CSS
+
+The site passes all tests on [CSSjigsaw validator](https://jigsaw.w3.org/)
+
+![CSS validator]()
+
+## Accessability
+
+Accessability was tested using Lighthouse on Google Developer Tools, passmark 100% achieved on all pages.
+
+![Accessability]()
+
 ### Deployment
 
 ##### Creating the site
@@ -69,3 +94,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - Click save
 
 The live link can be found here - https://lauraz-15.github.io/javascript-quiz/
+
+## Credits
+
+Thank you so much my mentor [Daisy Mc Girr](https://github.com/Daisy-McG) for all the guidance throughout this project.
