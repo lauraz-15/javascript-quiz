@@ -209,29 +209,42 @@ function displayGameArea(currentQuestion) {
  * Add relevant class to the answer(green for correct, red for incorrect)
  */
 function checkAnswer(currentQuestion) {
+    let questionAnswered = true;
     let answers = document.getElementsByClassName("answers");
     const scoreArea = document.getElementById("score");
 
     for (let answer of answers) {
         answer.addEventListener("click", function (e) {
             let usersChoice = this.id;
-            answer.disabled = true;
 
             if (usersChoice === correctAnswer) {
-                usersChoice.disabled = true;
                 answer.classList.add("correct-answer");
-                addNextButton(currentQuestion);
-                score += correctScore;
-                scoreArea.innerText = score;
+                let nextBtn = document.getElementById("next-btn");
+                if (nextBtn) {
+                    score += correctScore;
+                    scoreArea.innerText = score;
+                } else {
+                    score += correctScore;
+                    scoreArea.innerText = score;
+                    addNextButton(currentQuestion);
+                }
+                
+                
                 if (counter < maxQuestions) {
-                    nextQuestion();
+                  nextQuestion();
+                    
                 } else {
                     endGame();
                 }
             } else if (usersChoice !== correctAnswer) {
                 answer.classList.add("wrong-answer");
                 document.querySelectorAll("answers").disabled = true;
-                addNextButton(currentQuestion);
+                let nextBtn = document.getElementById("next-btn");
+                if (nextBtn) { 
+                } else {
+                    addNextButton(currentQuestion);
+                }
+            
                 if (counter < maxQuestions) {
                     nextQuestion();
                 } else {
