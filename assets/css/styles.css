@@ -109,7 +109,8 @@ p {
     font-weight: 700;
     font-size: 150%;
     color: #ffffff;
-    margin: 5% 39% 12% 39%;
+    margin: 0 auto;
+    /* margin: 5% 39% 12% 39%; */
 }
 
 #start-btn:hover {

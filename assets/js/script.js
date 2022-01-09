@@ -165,7 +165,7 @@ function getQuestion() {
     answerC.innerText = currentQuestion.answerC;
     answerD.innerText = currentQuestion.answerD;
 
-    correctAnswer = currentQuestion['correct'];
+    correctAnswer = currentQuestion.correct;
     console.log(`The correct answer from getQuestion 
     function is: ${correctAnswer}`);
 
