@@ -159,11 +159,7 @@ function getQuestion() {
     answerD.innerText = currentQuestion.answerD;
 
     correctAnswer = currentQuestion.correct;
-    console.log(`The correct answer from getQuestion 
-    function is: ${correctAnswer}`);
-
     questionsArray.splice(randomNumber, 1);
-
     displayScoreandCounter();
 }
 
@@ -209,7 +205,6 @@ function displayGameArea(currentQuestion) {
  * Add relevant class to the answer(green for correct, red for incorrect)
  */
 function checkAnswer(currentQuestion) {
-    let questionAnswered = true;
     let answers = document.getElementsByClassName("answers");
     const scoreArea = document.getElementById("score");
 
@@ -317,10 +312,9 @@ function endGame() {
     endGamepanel.id = "end-game";
 
     let html = `<h2 id="end-text">Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
-       <button id="start-btn" class="restart">RESTART</button>`;
+       <div style="display:flex"><button id="start-btn" class="restart">RESTART</button></div>`;
 
     endGamepanel.innerHTML = html;
-    console.log(endGamepanel.innerHTML);
 
     let bodyArea = document.getElementById("body-area");
     bodyArea.appendChild(endGamepanel);
