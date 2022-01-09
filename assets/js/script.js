@@ -271,8 +271,8 @@ function addNextButton() {
    
     nextButton.innerHTML = html;
     
-    let myDiv = document.getElementById("container");
-    myDiv.appendChild(nextButton);
+    let gamePanel = document.getElementById("game-panel");
+    gamePanel.appendChild(nextButton); 
 }
 
 /**
@@ -286,7 +286,7 @@ function resetQuestionArea() {
 }
 
 /**
- * Listen to event wgen user clicks the button
+ * Listen to event when user clicks the button
  * Get next question
  * Update the question counter
  */
