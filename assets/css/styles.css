@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500;1,600&display=swap');
 
 body {
-    background-image: url("..images/background.jpeg");
+    background-image: url("../images/background.jpeg");
 }
 
 /* Game Panel background and sizing */
@@ -21,7 +21,7 @@ body {
     margin-top: 4%;
     background-repeat: no-repeat;
     background-position: center;
-    background:url(..images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
+    background:url(../images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
     background-size:cover;
     background-blend-mode: multiply;
 }
@@ -83,7 +83,6 @@ p {
 
 /* Next Button */
 
-
 #next-btn {
     background: rgba(25, 123, 235, 0.356);
     border-radius: 15px;
@@ -95,7 +94,6 @@ p {
     color: #ffffff;
     padding: 10px;
     margin: 7% 10% 10% 65%;
-
 }
 
 #next-btn:hover {
@@ -123,7 +121,7 @@ p {
 /* End Game panel */
 
 #end-game {
-    background-image: url("/assets/images/game-panel-bkg.jpeg");
+    background-image: url("../images/game-panel-bkg.jpeg");
     justify-content: center;
 }
 
