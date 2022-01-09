@@ -1,13 +1,11 @@
 
 # Javascript Quiz
 
-![Logo](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/logo.png)
+![Logo](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/logo-small.png)
 
 Link: [Javascript Quiz](https://lauraz-15.github.io/javascript-quiz/)
 
-Javascript Quiz is an interactive quiz made for users to test their Javascrip knowlage and by using the quiz improve the knowladge over time. 
-
-The target audience are any level software developers who want to test and improve their Javascrip knowlage. Additionally this can be used to prepare for technical interviews or tests.
+Javascript Quiz is an interactive quiz made for users to test their Javascrip knowlage and by using the quiz improve the knowladge over time. The target audience are any level software developers who want to test and improve their Javascrip knowlage. Additionally this can be used to prepare for technical interviews or tests.
 
 ![Mockup](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/mock-up.png)
 
@@ -31,16 +29,8 @@ The target audience are any level software developers who want to test and impro
 
 # Design 
 
-Inspiration for design is taken from "Do you want to be a millionaire TV quiz show. 
-The main heading also relates to it slighty as it says: "Can you be a Javascrip Master"
-
-
-Potential features to include:
-
-A score tracking system
-Images to support the correct/incorrect answers
-User can create a username
-Feedback
+The inspiration for design at the beginning was taken from "Do you want to be a millionaire TV quiz show. However, the end result doesn't look that similar, which also wasnlt exaclty the goal. 
+Design is aimed to be smart and simple, so user would not be destracted too much for the questions.
 
 # Features
 
@@ -52,7 +42,7 @@ As soon as the website is loaded, user is presented with the quiz rules. When us
 
 ## Correct Answer
 
-Answers also has hover effect applied to them, which shows that answers are buttons. 
+Answers also has a hover effect applied to them, which shows that answers are buttons. 
 When user clicks on the correct answer, user is presented with the feeback - the selected answer turns green. This instant feedback is useful to make the quiz more interesting for the user. 
 
 ![Correct Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/correct-answer.png)

@@ -1,7 +1,7 @@
 let questions = [{
-        question: "Why does JavaScript and Java have similar name",
+        question: "Why does JavaScript and Java have a similar name",
         answerA: "JavaScript is a stripped-down version of Java",
-        anwswerB: "JavaScript's syntax is loosely based on Java's",
+        anwswerB: "JavaScript\'s syntax is loosely based on Java\'s",
         answerC: "They both originated on the island of Java",
         answerD: "None of the above",
         correct: "answer-b"
@@ -93,7 +93,7 @@ let score = 0;
 let currentQuestion = {};
 let counter = 0;
 let questionsArray = [];
-const maxQuestions = 5;
+const maxQuestions = 30;
 const correctScore = 100;
 let correctAnswer;
 
