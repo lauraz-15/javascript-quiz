@@ -41,4 +41,31 @@ Inspiration for design is taken from "Do you want to be a millionaire TV quiz sh
 The main heading also relates to it slighty as it says: "Can you be a Javascrip Master"
 
 
+Potential features to include:
 
+A score tracking system
+Images to support the correct/incorrect answers
+User can create a username
+Feedback
+
+### Deployment
+
+##### Creating the site
+
+The site was created based on [This template](https://github.com/Code-Institute-Org/gitpod-full-template)
+- Click 'Use this template'
+- Change the name
+- Click on 'Create new respository"
+- Once created, click on 'Gitpod'
+
+The site was built using temrinal commands to "commit" and "push" changes on to github:
+-git add . (To prepare files to add)
+-git commit -m "Some description of the commit" (To decscribe partiular commit/changes made)
+-git push (push the changes on to github)
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab
+- Go to pages and select main branch
+- Click save
+
+The live link can be found here - https://lauraz-15.github.io/mindful-life/
