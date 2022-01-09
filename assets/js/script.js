@@ -245,6 +245,7 @@ function checkAnswer(currentQuestion) {
                     endGame();
                 }
             } else if (usersChoice !== correctAnswer) {
+                answer.classList.add("wrong-answer");
                 document.querySelectorAll("answers").disabled = true;
                 addNextButton(currentQuestion);
                 if (counter < maxQuestions) {

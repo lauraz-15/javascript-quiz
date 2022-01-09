@@ -8,17 +8,15 @@ body {
     margin-top: 30px;
 }
 
-/* #contast-box {
-    background:url(/assets/images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
-    background-size:cover;
-    background-blend-mode: multiply;
-} */
+#game-panel {
+    padding-bottom: 70px;
+}
 
 #game-panel, #end-game {
     width: 60%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 6%;
+    margin-top: 4%;
     background-repeat: no-repeat;
     background-position: center;
     background:url(/assets/images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
