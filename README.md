@@ -7,15 +7,9 @@ Link: [Javascript Quiz](https://lauraz-15.github.io/javascript-quiz/)
 
 Javascript Quiz is an interactive quiz made for users to test their Javascrip knowlage and by using the quiz improve the knowladge over time. 
 
-User is asked to asnwer 30 questions to finish each quiz-game. The rules are displayed on the first page toether with the START button that user can press when ready. 
+The target audience are any level software developers who want to test and improve their Javascrip knowlage. Additionally this can be used to prepare for technical interviews or tests.
 
-When game is started then user is presented with a random question. User must select one of the answers in order to get an option to select the next question.
-
-Each correct answer revards user with 100 Javascrip quiz coins, that are added to the score area each time correct answer is selected. 
-
-The target audience for the website would be any lever software developers who want to test their Javascrip knowlage. Additionally this can be used to prepare for technical interviews or tests.3
-
-![Mockup]()
+![Mockup](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/mock-up.png)
 
 ## First Time Visitor Goals
   
@@ -47,6 +41,50 @@ A score tracking system
 Images to support the correct/incorrect answers
 User can create a username
 Feedback
+
+# Features
+
+## Quiz Rules
+
+As soon as the website is loaded, user is presented with the quiz rules. When user is ready, the START button can be pressed which would then start the quiz. The button has hover effect applied which indicates to the user that it is a clickable button.
+
+![Rules](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/game-rules.png)
+
+## Correct Answer
+
+Answers also has hover effect applied to them, which shows that answers are buttons. 
+When user clicks on the correct answer, user is presented with the feeback - the selected answer turns green. This instant feedback is useful to make the quiz more interesting for the user. 
+
+![Correct Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/correct-answer.png)
+
+## Incorrect Answer
+
+When user clicks on the incorrect answer, the answer turns red. The user can click on other answers to check which one is the correct one, this helps the user to learn and memorise the correct answer for the future. However, the score won't increase if the user didn't get the right answer with the first clikck. 
+
+![Incorrect Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/incorrect-answer.png)
+
+## Questions counter & score
+
+Score is incremented by 100 every time user gets the correct answer, this encourages user to get more correct answers. Question counter is incremented by one after each questions, showing how many questions have been answered. This help the usert o stay engaged until all 30 questions have been answered.
+
+![Questions counter & score](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/score%20_q-counter.png)
+
+## End Result
+
+Once the user answers all 30 questions, then results are presented, showing the total score. 
+The RESTART button is also presented to encourage user to play again and get the better score next time. 
+
+![End Result](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/end-result.png)
+
+# Features left to implement:
+
+## Music effects
+
+Short music clip would be played, each time user answers the question. This would work togetehr with the color feedback, to indicate to the user weather the question is answered correctly.
+
+## User name
+
+Option to enter the user's name before statign the quiz. This would encourage users to compare results and competete between themselves. 
 
 # Testing
 
