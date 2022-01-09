@@ -1,10 +1,8 @@
-
-let questions = [
-    {
+let questions = [{
         question: "Why does JavaScript and Java have similar name",
         answerA: "JavaScript is a stripped-down version of Java",
         anwswerB: "JavaScript's syntax is loosely based on Java's",
-        answerC:  "They both originated on the island of Java",
+        answerC: "They both originated on the island of Java",
         answerD: "None of the above",
         correct: "answer-b"
     },
@@ -12,7 +10,7 @@ let questions = [
         question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
         answerA: "The User's machine running a Web browser",
         answerB: "The Web server",
-        answerC:  "A central machine deep within Netscape's corporate offices",
+        answerC: "A central machine deep within Netscape's corporate offices",
         answerD: "None of the above",
         correct: "answer-a"
     },
@@ -20,7 +18,7 @@ let questions = [
         question: "______ JavaScript is also called client-side JavaScript.",
         answerA: "Microsoft",
         answerB: "Navigator",
-        answerC:  "LiveWire",
+        answerC: "LiveWire",
         answerD: "Native",
         correct: "answer-b"
     },
@@ -28,7 +26,7 @@ let questions = [
         question: "__________ JavaScript is also called server-side JavaScript.",
         answerA: "Microsoft",
         answerB: "Navigator",
-        answerC:  "LiveWire",
+        answerC: "LiveWire",
         answerD: "Native",
         correct: "answer-c"
     },
@@ -36,7 +34,7 @@ let questions = [
         question: "_____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.",
         answerA: "Client-side",
         answerB: "Server-side",
-        answerC:  "Local",
+        answerC: "Local",
         answerD: "Native",
         correct: "answer-a"
     },
@@ -44,7 +42,7 @@ let questions = [
         question: "What are variables used for in JavaScript Programs?",
         answerA: "Storing numbers, dates, or other values",
         answerB: "Varying randomly",
-        answerC:  "Causing high-school algebra flashbacks",
+        answerC: "Causing high-school algebra flashbacks",
         answerD: "None of the above",
         correct: "answer-a"
     },
@@ -60,7 +58,7 @@ let questions = [
         question: "Which of the following are capabilities of functions in JavaScript?",
         answerA: "Return a value",
         answerB: "Accept parameters and Return a value",
-        answerC:  "Accept parameters",
+        answerC: "Accept parameters",
         answerD: "None of the above",
         correct: "answer-c"
     },
@@ -68,7 +66,7 @@ let questions = [
         question: "Which of the following is not a valid JavaScript variable name?",
         answerA: "2names",
         answerB: "_first_and_last_names",
-        answerC:  "FirstAndLast",
+        answerC: "FirstAndLast",
         answerD: "None of the above",
         correct: "answer-d"
     },
@@ -76,7 +74,7 @@ let questions = [
         question: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
         answerA: "<script>",
         answerB: "<body>",
-        answerC:  "<head>",
+        answerC: "<head>",
         answerD: "<title",
         correct: "answer-a"
     },
@@ -104,11 +102,10 @@ let correctAnswer;
  * Load page and start the event listeners for the start button
  * If pressed, then call runGame function
  */
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let button = document.getElementById("start-btn");
-    button.addEventListener("click", function() {
-       runGame();
+    button.addEventListener("click", function () {
+        runGame();
     });
 });
 
@@ -118,12 +115,10 @@ document.addEventListener("DOMContentLoaded", function() {
  * Display the game panenel and add questions
  * Check user's choice
  */
-
- function runGame() {
-
+function runGame() {
     let rules = document.getElementById("rules");
     rules.remove();
-  
+
     let startButton = document.getElementById("start-btn");
     startButton.remove();
 
@@ -142,9 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
  * Insert random question values into html elements
  * Update question counter
  */
-
 function getQuestion() {
-
     const question = document.getElementById("question");
     const answerA = document.getElementById("answer-a");
     const answerB = document.getElementById("answer-b");
@@ -157,7 +150,7 @@ function getQuestion() {
 
     let randomNumber = Math.floor(Math.random() * questionsArray.length);
     let currentQuestion = questions[randomNumber];
-    
+
     question.textContent = currentQuestion.question;
     question.innerText = currentQuestion.question;
     answerA.innerText = currentQuestion.answerA;
@@ -172,31 +165,26 @@ function getQuestion() {
     questionsArray.splice(randomNumber, 1);
 
     displayScoreandCounter();
-
 }
 
 /**
  * Display score and questions counter
  */
-
 function displayScoreandCounter(currentQuestion) {
     let basicDisplay = document.createElement("div");
     basicDisplay.id = "basic"
 
-    html = ` <p>Score: <span id="score">0</p>
-    <p id="q-counter">Question: 0/30</p>`
+    let html = ` <p>Score: <span id="score">0</p>
+    <p id="q-counter">Question: 0/30</p>`;
 
-    let gamePanel = document.getElementById("game-panel"); 
+    let gamePanel = document.getElementById("game-panel");
     gamePanel.appendChild(basicDisplay);
-
 }
 /**
  * Display game-area 
  * game area consists of score counter, question area, questions and answers
  */
-
 function displayGameArea(currentQuestion) {
-
     let gameArea = document.createElement("div");
     let html = `<div id="container">
     <p>Score: <span id="score">0</span> JS Coins</p>
@@ -210,9 +198,8 @@ function displayGameArea(currentQuestion) {
     <p id="answer-d" class="answers">Answer D</p>
     </div>
     </div>`;
-
-    gameArea.innerHTML = html; 
-    let gamePanel = document.getElementById("game-panel"); 
+    gameArea.innerHTML = html;
+    let gamePanel = document.getElementById("game-panel");
     gamePanel.appendChild(gameArea);
 }
 
@@ -221,24 +208,21 @@ function displayGameArea(currentQuestion) {
  * Update the score if the correct answer selected
  * Add relevant class to the answer(green for correct, red for incorrect)
  */
-
 function checkAnswer(currentQuestion) {
-    
     let answers = document.getElementsByClassName("answers");
     const scoreArea = document.getElementById("score");
 
     for (let answer of answers) {
-        answer.addEventListener("click", function(e) {
+        answer.addEventListener("click", function (e) {
             let usersChoice = this.id;
+            answer.disabled = true;
 
             if (usersChoice === correctAnswer) {
-
+                usersChoice.disabled = true;
                 answer.classList.add("correct-answer");
                 addNextButton(currentQuestion);
                 score += correctScore;
                 scoreArea.innerText = score;
-                document.querySelectorAll("answers").disabled = true;
-    
                 if (counter < maxQuestions) {
                     nextQuestion();
                 } else {
@@ -254,35 +238,27 @@ function checkAnswer(currentQuestion) {
                     endGame();
                 }
             }
-            
         });
     }
-
-}       
-
+}
 
 /**
  * Add next button to the game panel
  */
-
-
 function addNextButton() {
     let nextButton = document.createElement("button");
     nextButton.id = "next-btn";
-
     let html = "Next Question";
-   
     nextButton.innerHTML = html;
     
     let gamePanel = document.getElementById("game-panel");
-    gamePanel.appendChild(nextButton); 
+    gamePanel.appendChild(nextButton);
 }
 
 /**
  * Remove question element from html
  * remove answer elements
  */
-
 function resetQuestionArea() {
     let questionArea = document.getElementById("q-area");
     questionArea.remove();
@@ -293,13 +269,11 @@ function resetQuestionArea() {
  * Get next question
  * Update the question counter
  */
-
 function nextQuestion() {
-    
     let nextBtn = document.getElementById("next-btn");
-    nextBtn.addEventListener("click", function(e) {
+    nextBtn.addEventListener("click", function (e) {
         let nextButton = document.getElementById("next-btn");
-        nextButton.remove();  
+        nextButton.remove();
 
         let questionArea = document.getElementById("q-area");
         questionArea.remove();
@@ -314,12 +288,12 @@ function nextQuestion() {
         <p id="answer-c" class="answers">Answer C</p>
         <p id="answer-d" class="answers">Answer D</p>`;
 
-        gameArea.innerHTML = html; 
-        let gamePanel = document.getElementById("game-panel"); 
+        gameArea.innerHTML = html;
+        let gamePanel = document.getElementById("game-panel");
         gamePanel.appendChild(gameArea);
 
         getQuestion();
-        checkAnswer(currentQuestion);  
+        checkAnswer(currentQuestion);
     });
 }
 
@@ -328,18 +302,15 @@ function nextQuestion() {
  * Display banner, presenting a message and total score
  * display "RESTART" button
  */
-
-
 function endGame() {
-
     let gamePanel = document.getElementById("game-panel");
     gamePanel.remove();
 
     let endGamepanel = document.createElement("div");
-    endGamepanel.id = "end-game"
+    endGamepanel.id = "end-game";
 
-    html = `<h2 id="end-text">Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
-       <button id="start-btn" class="restart">RESTART</button>`
+    let html = `<h2 id="end-text">Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
+       <button id="start-btn" class="restart">RESTART</button>`;
 
     endGamepanel.innerHTML = html;
     console.log(endGamepanel.innerHTML);
@@ -348,7 +319,7 @@ function endGame() {
     bodyArea.appendChild(endGamepanel);
 
     let button = document.getElementById("start-btn");
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
         document.location.reload();
     });
 }
