@@ -171,10 +171,25 @@ function getQuestion() {
 
     questionsArray.splice(randomNumber, 1);
 
-    // displayScoreandCounter();
+    displayScoreandCounter();
 
 }
 
+/**
+ * Display score and questions counter
+ */
+
+function displayScoreandCounter(currentQuestion) {
+    let basicDisplay = document.createElement("div");
+    basicDisplay.id = "basic"
+
+    html = ` <p>Score: <span id="score">0</p>
+    <p id="q-counter">Question: 0/30</p>`
+
+    let gamePanel = document.getElementById("game-panel"); 
+    gamePanel.appendChild(basicDisplay);
+
+}
 /**
  * Display game-area 
  * game area consists of score counter, question area, questions and answers
