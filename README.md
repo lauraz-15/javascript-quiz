@@ -94,9 +94,9 @@ The website was built using [Git](https://git-scm.com/) version control to commi
 
 ## Testing
 
-Testing was performed on three different browsers: Chrome, Firefox and Apple Safari. Some errors were found during the process, nothing major and rectified quickly by adding or replacing some attributes. Repeaded testing was performed once changes were made to ensure all tests were passed. Website was also tested on actual mobile device additionally to in depth responsivness testing performed on Google Developer tools.
+Testing was performed on three different browsers: Chrome, Firefox and Apple Safari. Some errors were found during the process(marked in yellow), but were rectified quickly by adding some if statements. Repeaded testing was performed once changes were made to ensure all tests were passed. Website was also tested on actual mobile device additionally to in depth responsivness testing performed on Google Developer tools.
 
-
+![Testing](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/testing.png)
 
 ### Validator Testing
 
