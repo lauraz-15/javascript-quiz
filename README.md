@@ -9,7 +9,7 @@ Javascript Quiz is an interactive quiz made for users to test their Javascrip kn
 
 ![Mockup](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/mock-up.png)
 
-## First Time Visitor Goals
+### First Time Visitor Goals
   
 - To easily understand the main purpose of the site
 - To be able to intuitively act on optins presented 
@@ -17,66 +17,82 @@ Javascript Quiz is an interactive quiz made for users to test their Javascrip kn
 - To test their Javascript knowladge
 - To learn more by answering questions and by getting visual feedback
 
-## Returning Customer Goals
+### Returning Customer Goals
 - To improve the score 
 - To improve their knowlade of Javascript
 - To gain confidence talking about Javascript theoretical points
 
-## Frequent Visitor Goals
+### Frequent Visitor Goals
 - To improve the score 
 - To improve their knowlade of Javascript
 - To gain confidence talking about Javascript theoretical points
 
-# Design 
+## Design 
 
-The inspiration for design at the beginning was taken from "Do you want to be a millionaire TV quiz show. However, the end result doesn't look that similar, which also wasnlt exaclty the goal. 
-Design is aimed to be smart and simple, so user would not be destracted too much for the questions.
+The inspiration for design at the beginning was taken from "Do you want to be a millionaire TV quiz show. However, the end result doesn't look that similar, which also wasnšt exaclty the goal. 
+Design is aimed to be smart and simple, so user would not be destracted whilst answering the questions.
 
-# Features
+## Features
 
-## Quiz Rules
+### Quiz Rules
 
-As soon as the website is loaded, user is presented with the quiz rules. When user is ready, the START button can be pressed which would then start the quiz. The button has hover effect applied which indicates to the user that it is a clickable button.
+As soon as the website is loaded, user is presented with the quiz rules. When user is ready, the START button can be pressed which would then start the quiz. The button has a hover effect applied to it, which indicates to the user that it is a clickable button.
 
 ![Rules](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/game-rules.png)
 
-## Correct Answer
+### Correct Answer
 
 Answers also has a hover effect applied to them, which shows that answers are buttons. 
 When user clicks on the correct answer, user is presented with the feeback - the selected answer turns green. This instant feedback is useful to make the quiz more interesting for the user. 
 
 ![Correct Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/correct-answer.png)
 
-## Incorrect Answer
+### Incorrect Answer
 
 When user clicks on the incorrect answer, the answer turns red. The user can click on other answers to check which one is the correct one, this helps the user to learn and memorise the correct answer for the future. However, the score won't increase if the user didn't get the right answer with the first clikck. 
 
 ![Incorrect Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/incorrect-answer.png)
 
-## Questions counter & score
+### Questions counter & score
 
-Score is incremented by 100 every time user gets the correct answer, this encourages user to get more correct answers. Question counter is incremented by one after each questions, showing how many questions have been answered. This help the usert o stay engaged until all 30 questions have been answered.
+Score is incremented by 100 every time user gets the correct answer, this encourages user to get more correct answers. Question counter is incremented by one after each questions, showing how many questions have been answered. This help the user to stay engaged until all 30 questions have been answered as the progress is presented.
 
-![Questions counter & score](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/score%20_q-counter.png)
+![Questions counter & score](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/score%20and%20q-counter.png)
 
-## End Result
+### End Result
 
 Once the user answers all 30 questions, then results are presented, showing the total score. 
 The RESTART button is also presented to encourage user to play again and get the better score next time. 
 
 ![End Result](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/end-result.png)
 
-# Features left to implement:
+## Features left to implement:
 
-## Music effects
+### Music effects
 
 Short music clip would be played, each time user answers the question. This would work togetehr with the color feedback, to indicate to the user weather the question is answered correctly.
 
-## User name
+### User name
 
 Option to enter the user's name before statign the quiz. This would encourage users to compare results and competete between themselves. 
 
-# Testing
+## Tools and Technologies
+
+The fav icon was generated from [Favicon.io](https://favicon.io/)
+
+The fonts were taken from [Font.google.com](https://fonts.google.com/)
+
+Logo was designed using [Canva.com](https://www.canva.com/)
+
+Multi site mockup genrated on [Techsini.com](https://techsini.com/multi-mockup/index.php)
+
+Site was built on deplyed using [Github](https://github.com/)
+
+The website was built using [Git](https://git-scm.com/) version control to commit and push code on to deductaed github raspitory
+
+[Google Developer Tools](https://developer.chrome.com/docs/devtools/) was used to test responsivness and effectively check what changes necessary in css coding to get desired results.
+
+## Testing
 
 
 
@@ -111,10 +127,14 @@ The site was created based on [This template](https://github.com/Code-Institute-
 - Click on 'Create new respository"
 - Once created, click on 'Gitpod'
 
+##### Version Control
+
 The site was built using temrinal commands to "commit" and "push" changes on to github:
 -git add . (To prepare files to add)
 -git commit -m "Some description of the commit" (To decscribe partiular commit/changes made)
 -git push (push the changes on to github)
+
+##### Deploymnet 
 
 The site was deployed to GitHub pages. The steps to deploy are as follows:
 - In the GitHub repository, navigate to the Settings tab
@@ -126,3 +146,11 @@ The live link can be found here - https://lauraz-15.github.io/javascript-quiz/
 ## Credits
 
 Thank you so much my mentor [Daisy Mc Girr](https://github.com/Daisy-McG) for all the guidance throughout this project.
+
+### Content
+
+The questions were taken from [Pdfcookie.com](https://pdfcookie.com/documents/javascript-multiple-choice-questions-and-answers-rvr7jj8k5w2o#fulltext)
+
+## Media
+
+The photos on all pages were taken from [Pixabay.com](https://pixabay.com/)
