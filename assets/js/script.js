@@ -237,6 +237,7 @@ function checkAnswer(currentQuestion) {
                 addNextButton(currentQuestion);
                 score += correctScore;
                 scoreArea.innerText = score;
+                document.querySelectorAll("answers").disabled = true;
     
                 if (counter < maxQuestions) {
                     nextQuestion();
@@ -244,6 +245,7 @@ function checkAnswer(currentQuestion) {
                     endGame();
                 }
             } else if (usersChoice !== correctAnswer) {
+                document.querySelectorAll("answers").disabled = true;
                 addNextButton(currentQuestion);
                 if (counter < maxQuestions) {
                     nextQuestion();
