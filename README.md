@@ -3,7 +3,7 @@
 
 ![Logo]()
 
-Link: [Javascript Quiz]()
+Link: [Javascript Quiz](https://lauraz-15.github.io/javascript-quiz/)
 
 Javascript Quiz is an interactive quiz made for users to test their Javascrip knowlage and by using the quiz improve the knowladge over time. 
 
@@ -68,4 +68,4 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - Go to pages and select main branch
 - Click save
 
-The live link can be found here - https://lauraz-15.github.io/mindful-life/
+The live link can be found here - https://lauraz-15.github.io/javascript-quiz/

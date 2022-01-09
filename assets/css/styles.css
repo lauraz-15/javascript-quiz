@@ -15,13 +15,11 @@ body {
 } */
 
 #game-panel, #end-game {
-    width: 65%;
+    width: 60%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 5%;
-    background-image: url("/assets/images/game-panel-bkg.jpeg");
+    margin-top: 6%;
     background-repeat: no-repeat;
-    /* background-size: cover; */
     background-position: center;
     background:url(/assets/images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
     background-size:cover;
@@ -39,8 +37,7 @@ h1, h2, p {
 h1, h2 {
     font-size: 190%;
     padding: 30px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    text-decoration: solid 1px black;
     font-weight: 700;
 }
 
