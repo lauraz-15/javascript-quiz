@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500;1,600&display=swap');
 
 body {
-    background-image: url("/assets/images/background.jpeg");
+    background-image: url("..images/background.jpeg");
 }
+
+/* Game Panel background and sizing */
 
 #rules {
     margin-top: 30px;
@@ -19,10 +21,12 @@ body {
     margin-top: 4%;
     background-repeat: no-repeat;
     background-position: center;
-    background:url(/assets/images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
+    background:url(..images/game-panel-bkg.jpeg) rgba(255, 0, 150, 0.3);
     background-size:cover;
     background-blend-mode: multiply;
 }
+
+/* Headings and paragraphs */
 
 h1, h2, p {
     font-family: "Poppins", sans-serif;
@@ -77,7 +81,7 @@ p {
     background: rgba(245, 78, 49, 0.6);
 }
 
-/* Question counter */
+/* Next Button */
 
 
 #next-btn {
@@ -116,7 +120,7 @@ p {
     background-color: cornflowerblue;
 }
 
-
+/* End Game panel */
 
 #end-game {
     background-image: url("/assets/images/game-panel-bkg.jpeg");
@@ -130,6 +134,6 @@ p {
 }
 
 .restart {
-   padding: 10px;
+   display: flex;
 }
 
