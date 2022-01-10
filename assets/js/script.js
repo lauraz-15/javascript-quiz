@@ -259,7 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let button = document.getElementById("start-btn");
     button.addEventListener("click", function () {
         runGame();
-        console.log(questions.length);
     });
 });
 
@@ -313,23 +312,9 @@ function getQuestion() {
     answerD.innerText = currentQuestion.answerD;
 
     correctAnswer = currentQuestion.correct;
-    questionsArray.splice(randomNumber);
-    displayScoreandCounter();
+    questionsArray.splice[randomNumber];
 }
 
-/**
- * Display score and questions counter
- */
-function displayScoreandCounter(currentQuestion) {
-    let basicDisplay = document.createElement("div");
-    basicDisplay.id = "basic"
-
-    let html = ` <p>Score: <span id="score">0</p>
-    <p id="q-counter">Question: 0/30</p>`;
-
-    let gamePanel = document.getElementById("game-panel");
-    gamePanel.appendChild(basicDisplay);
-}
 /**
  * Display game-area 
  * game area consists of score counter, question area, questions and answers
@@ -409,15 +394,6 @@ function addNextButton() {
     
     let gamePanel = document.getElementById("game-panel");
     gamePanel.appendChild(nextButton);
-}
-
-/**
- * Remove question element from html
- * remove answer elements
- */
-function resetQuestionArea() {
-    let questionArea = document.getElementById("q-area");
-    questionArea.remove();
 }
 
 /**
