@@ -38,7 +38,7 @@ Design is aimed to be smart and simple, so user would not be destracted whilst a
 
 As soon as the website is loaded, user is presented with the quiz rules. This helps the user to understand the rules of the quiz. When user is ready, the START button can be pressed which would then start the quiz. The button has a hover effect applied to it, which indicates to the user that it is a clickable button.
 
-![Rules](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/game-rules.png)
+![Rules](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/rules.png)
 
 ### Correct Answer
 
@@ -57,14 +57,14 @@ When user clicks on the incorrect answer, the answer turns red which indicates t
 
 Score is incremented by 100 every time user gets the correct answer, this encourages user to get more correct answers. Question counter is incremented by one after each questions, showing how many questions have been answered. This help the user to stay engaged until all 30 questions have been answered as the progress is presented.
 
-![Questions counter & score](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/score%20and%20q-counter.png)
+![Questions counter & score](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/score%20.png)
 
 ### End Result
 
 Once the user answers all 30 questions, then results are presented, showing the total score. 
 The RESTART button is also presented to encourage user to play again and get the better score next time. 
 
-![End Result](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/end-result.png)
+![End Result](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/end-game.png)
 
 ## Features left to implement:
 
