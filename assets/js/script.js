@@ -323,7 +323,7 @@ function displayGameArea(currentQuestion) {
     let gameArea = document.createElement("div");
     let html = `<div id="container">
     <p>Score: <span id="score">0</span> JS Coins</p>
-    <p id="q-counter">Question 0/30</p>
+    <p id="q-counter">Question 0/10</p>
     <div id="q-area">
     <p id="question">Some question</p>
     <div class="answers-container">
@@ -441,7 +441,7 @@ function endGame() {
     let endGamepanel = document.createElement("div");
     endGamepanel.id = "end-game";
 
-    let html = `<h2 id="end-text">Congratulations, you have answered all 30 questions, your current score is: ${score}</h2>
+    let html = `<h2 id="end-text">Congratulations, you have answered all 10 questions, your current score is: ${score}</h2>
        <div style="display:flex"><button id="start-btn" class="restart">RESTART</button></div>`;
 
     endGamepanel.innerHTML = html;
