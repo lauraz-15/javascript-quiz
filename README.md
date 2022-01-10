@@ -36,20 +36,20 @@ Design is aimed to be smart and simple, so user would not be destracted whilst a
 
 ### Quiz Rules
 
-As soon as the website is loaded, user is presented with the quiz rules. When user is ready, the START button can be pressed which would then start the quiz. The button has a hover effect applied to it, which indicates to the user that it is a clickable button.
+As soon as the website is loaded, user is presented with the quiz rules. This helps the user to understand the rules of the quiz. When user is ready, the START button can be pressed which would then start the quiz. The button has a hover effect applied to it, which indicates to the user that it is a clickable button.
 
 ![Rules](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/game-rules.png)
 
 ### Correct Answer
 
 Answers also has a hover effect applied to them, which shows that answers are buttons. 
-When user clicks on the correct answer, user is presented with the feeback - the selected answer turns green. This instant feedback is useful to make the quiz more interesting for the user. 
+When user clicks on the correct answer, user is presented with the feeback that the user asnwered question correctly as the selected answer turns green. This instant feedback is useful to make the quiz more interesting for the user. 
 
 ![Correct Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/correct-answer.png)
 
 ### Incorrect Answer
 
-When user clicks on the incorrect answer, the answer turns red. The user can click on other answers to check which one is the correct one, this helps the user to learn and memorise the correct answer for the future. However, the score won't increase if the user didn't get the right answer with the first clikck. 
+When user clicks on the incorrect answer, the answer turns red which indicates to the user that the question is answered incorrectly. The user can click on other answers to check which one is the correct one, this helps the user to learn and memorise the correct answer for the future. However, the score won't increase if the user didn't get the right answer with the first clikck. 
 
 ![Incorrect Answer](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/incorrect-answer.png)
 
@@ -77,6 +77,10 @@ Short music clip would be played, each time user answers the question. This woul
 Option to enter the user's name before statign the quiz. This would encourage users to compare results and competete between themselves. 
 
 ## Tools and Technologies
+
+Styles have been applied to the website using CSS.
+
+Functionality to the website have been applied using Javascript.
 
 The fav icon was generated from [Favicon.io](https://favicon.io/)
 
@@ -111,6 +115,10 @@ The site passes W3C Validator testing on [W3C Validator](https://validator.w3.or
 The site passes all tests on [CSSjigsaw validator](https://jigsaw.w3.org/)
 
 ![CSS validator](https://github.com/lauraz-15/javascript-quiz/blob/main/assets/readme_img/css_validator.png)
+
+## Javascript
+
+The site passes through Java script validator: [JShint.com](https://jshint.com/)
 
 ## Accessability
 
