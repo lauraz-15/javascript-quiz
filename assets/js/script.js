@@ -1,7 +1,7 @@
 let questions = [{
         question: "Why does JavaScript and Java have a similar name",
         answerA: "JavaScript is a stripped-down version of Java",
-        anwswerB: `JavaScript's syntax is loosely based on Java's`,
+        answerB: "JavaScript syntax is loosely based on Java's",
         answerC: "They both originated on the island of Java",
         answerD: "None of the above",
         correct: "answer-b"
@@ -189,8 +189,57 @@ let questions = [{
         answerC: "ToString()", 
         answerD: "None of the above",
         correct: "answer-c"
+    },
+    {
+        question: "Which of the following function of String object causes a string to be italic, as if it were in an <i> tag?",
+        answerA: "fontsize()",
+        answerB: "fontcolor()",
+        answerC: "fixed()",
+        answerD: " italics()",
+        correct: "answer-d"
+    },
+    {
+        question: "Purpose of designing the Javascript",
+        answerA: "To Perform Server Side Scripting Opertion",
+        answerB: "To add interactivity to HTML Pages",
+        answerC: "To Style HTML Pages", 
+        answerD: "All of the above",
+        correct: "answer-b"
+    },
+    {
+        question: "Which of the following function of Array object removes the last element from an array and returns that element?",
+        answerA: "push()",
+        answerB: "delete()",
+        answerC: "pop()",
+        answerD: "link()",
+        correct: "answer-c"
+    },
+    {
+        question: " Original Name of Javascript is",
+        answerA: "Mocha",
+        answerB: "LiveScript",
+        answerC: "Escript",
+        answerD: "Javascript",
+        correct: "answer-b"
+    },
+    {
+        question: "A function definition expression is known as ",
+        answerA: "Function calls",
+        answerB: "Function definiation",
+        answerC: "Function calling", 
+        answerD: "Function literal",
+        correct: "answer-d"
+    },
+    {
+        question: "Which one is Ternary Operator",
+        answerA: "?*",
+        answerB: "?:",
+        answerC: ">?", 
+        answerD: "<?",
+        correct: "answer-b"
     }
 ];
+
 
 
 let score = 0;
@@ -264,7 +313,7 @@ function getQuestion() {
     answerD.innerText = currentQuestion.answerD;
 
     correctAnswer = currentQuestion.correct;
-    questionsArray.splice(randomNumber, 1);
+    questionsArray.splice(randomNumber);
     displayScoreandCounter();
 }
 
