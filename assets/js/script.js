@@ -246,7 +246,7 @@ let score = 0;
 let currentQuestion = {};
 let counter = 0;
 let questionsArray = [];
-const maxQuestions = 30;
+const maxQuestions = 10;
 const correctScore = 100;
 let correctAnswer;
 
@@ -312,7 +312,7 @@ function getQuestion() {
     answerD.innerText = currentQuestion.answerD;
 
     correctAnswer = currentQuestion.correct;
-    questionsArray.splice[randomNumber];
+    console.log(randomNumber);
 }
 
 /**
