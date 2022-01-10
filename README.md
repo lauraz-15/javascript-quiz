@@ -150,7 +150,9 @@ Thank you so much my mentor [Daisy Mc Girr](https://github.com/Daisy-McG) for al
 
 ### Content
 
-The questions were taken from [Pdfcookie.com](https://pdfcookie.com/documents/javascript-multiple-choice-questions-and-answers-rvr7jj8k5w2o#fulltext)
+The questions were taken from: [Pdfcookie.com](https://pdfcookie.com/documents/javascript-multiple-choice-questions-and-answers-rvr7jj8k5w2o#fulltext)
+
+[Proprofs.com](https://www.proprofs.com/quiz-school/playquiz/?title=javascript-online-quiz)
 
 ## Media
 

@@ -1,7 +1,7 @@
 let questions = [{
         question: "Why does JavaScript and Java have a similar name",
         answerA: "JavaScript is a stripped-down version of Java",
-        anwswerB: "JavaScript\'s syntax is loosely based on Java\'s",
+        anwswerB: `JavaScript's syntax is loosely based on Java's`,
         answerC: "They both originated on the island of Java",
         answerD: "None of the above",
         correct: "answer-b"
@@ -85,6 +85,110 @@ let questions = [{
         answerC: "The number of seconds since Netscape's public stock offering.",
         answerD: "None of the above",
         correct: "answer-a"
+    },
+    {
+        question: "Which of the following attribute can hold the JavaScript version?",
+        answerA: "LANGUAGE",
+        answerB: "SCRIPT",
+        answerC: "VERSION",
+        answerD: "None of the above",
+        correct: "answer-a"
+    },
+    {
+        question: "Inside which HTML element do we put the JavaScript?",
+        answerA: "<js>",
+        answerB: "<scripting>",
+        answerC: "<script>",
+        answerD: "<javascript>",
+        correct: "answer-c"
+    },
+    {
+        question: "Which types of image maps can be used with JavaScript?",
+        answerA: "Server-side image maps",
+        answerB: "Client-side image maps",
+        answerC: "Server-side image maps and Client-side image maps",
+        answerD: "None of the above",
+        correct: "answer-b"
+    },
+    {
+        question: "Which of the following best describes JavaScript?",
+        answerA: "a low-level programming language.",
+        answerB: "a scripting language precompiled in the browser",
+        answerC: "a compiled scripting language",
+        answerD: "an object-oriented scripting language",
+        correct: "answer-d"
+    },
+    {
+        question: "JavaScript is interpreted by _________",
+        answerA: "Client",
+        answerB: "Server",
+        answerC: "Object",
+        answerD: "None of the above",
+        correct: "answer-a"
+    },
+    {
+        question: "Using _______ statement is how you test for a specific condition.",
+        answerA: "Select",
+        answerB: "If", 
+        answerC: "Switch",
+        answerD: "For",
+        correct: "answer-b"
+    },
+    {
+        question: "How to create a Date object in JavaScript?",
+        answerA: "dateObjectName = new Date([parameters])",
+        answerB: "dateObjectName.new Date([parameters])",
+        answerC: "dateObjectName := new Date([parameters])",
+        answerD: "dateObjectName Date([parameters])",
+        correct: "answer-a"
+    },
+    {
+        question: "The _______ method of an Array object adds and/or removes elements from an array.",
+        answerA: "Reverse",
+        answerB: "Shift",
+        answerC: "Slice",
+        answerD: "Splice",
+        correct: "answer-d"
+    },
+    {
+        question: "Which of the following function of the String object returns the index within the calling String object of the last occurrence of the specified value?",
+        answerA: "LastIndexOf()",
+        answerB: "Search()",
+        answerC: "Substr()", 
+        answerD: "IndexOf()",
+        correct: "answer-a"
+    },
+    {
+        question: "Which of the following function of the Array object returns a string representing the array and its elements?",
+        answerA: "ToSource()",
+        answerB: "Sort()",
+        answerC: "Splice()",
+        answerD: "ToString()",
+        correct: "answer-d"
+    },
+    {
+        question: "How can you get the type of arguments passed to a function?",
+        answerA: "Using typeof operator",
+        answerB: "Using getType function",
+        answerC: "Both of the above",
+        answerD: "None of the above",
+        correct: "answer-a"
+    },
+    {
+        question: "Which built-in method returns the character at the specified index?",
+        answerA: "CharacterAt()",
+        answerB: "GetCharAt()",
+        answerC: "CharAt()", 
+        answerD: "None of the above",
+        correct: "answer-c"
+    },
+    {
+        question: "Which built-in method returns the string representation of the number's value?",
+        answerA: "ToValue()",
+        answerB: "ToNumber()",
+        answerC: "ToString()", 
+        answerD: "None of the above",
+        correct: "answer-c"
     }
 ];
 
@@ -106,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let button = document.getElementById("start-btn");
     button.addEventListener("click", function () {
         runGame();
+        console.log(questions.length);
     });
 });
 
